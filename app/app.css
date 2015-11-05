@@ -3,44 +3,81 @@ html, body {
     background-color: #e2e8e6;
     font-family: "Arial";
 }
-div.main{
-    height:auto;
-    width:100%;
+
+div.main {
+    height: auto;
+    width: 100%;
 }
-div.header{
-    height:85px;
-    width:100%;
-    background-color:white;
-    border-bottom:2px solid #C1C1C1;
+
+div.header {
+    height: 85px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #C1C1C1;
 }
-.tunnel{
-    margin:50px auto 0;
-    position:relative;
-    height:600px;
-    width:1024px;
+
+.tunnel {
+    margin: 50px auto 0;
+    position: relative;
+    height: 600px;
+    width: 1024px;
     background-color: #fafafa;
-    z-index:0;
+    z-index: 0;
 }
-.tunnel>.tunnel-background-arrow{
-    top:105px;
-    left:0;
-    background-color:#0fa2a2;
-    z-index:1;
-    height:41px;
-    width:299px;
-    position:absolute;
-}
-.tunnel>.tunnel-scroll{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:auto;
-    z-index:2;
-}
-.tunnel>.tunnel-scroll>.tunnel-title{
-    height:105px;
-}
+
+    .tunnel > .tunnel-background-group {
+        padding: 1px 20px;
+        font-size: 12px;
+        color: #6F9B9A;
+        background-color: white;
+        border: 1px solid #e7e7e7;
+        width: auto;
+        top: 112px;
+        left: 0;
+        position: absolute;
+        border-radius: 0 10px 0 0;
+        font-weight: 500;
+        height: 16px;
+    }
+
+    .tunnel > .tunnel-background-arrow {
+        top: 132px;
+        left: -5px;
+        background-color: #0fa2a2;
+        z-index: 2;
+        height: 30px;
+        width: 250px;
+        position: absolute;
+        font-size: 20px;
+        color: white;
+        padding: 10px 0 10px 20px;
+    }
+
+        .tunnel > .tunnel-background-arrow::after {
+            content: "";
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 30px solid #0fa2a2;
+            left: 270px;
+            top: 0px;
+            height: 0;
+            width: 0;
+            position: absolute;
+            display: block;
+        }
+
+    .tunnel > .tunnel-scroll {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 1;
+    }
+
+        .tunnel > .tunnel-scroll > .tunnel-title {
+            height: 105px;
+        }
 
 select, input {
     width: 206px;
@@ -91,8 +128,8 @@ div.control {
         div.control > div.label > span {
             display: block;
             margin-left: 20px;
-            margin-top: -20px;
-            font-size: 14px;
+            margin-top: -15px;
+            font-size: 12px;
             color: transparent;
             transition: color 0.2s ease-out;
         }
@@ -103,8 +140,8 @@ div.control {
 
     div.control > div.label > label {
         display: block;
-        margin-left: 20px;
-        padding: 15px 0;
+        margin-left: 15px;
+        padding: 12px 0;
         font-size: 20px;
         transition: color 0.2s ease-out;
     }
@@ -112,20 +149,27 @@ div.control {
     div.control.focused > div.label > label {
         color: white;
     }
-      div.control > div.tooltip{
-          position:relative;
-      }
-    div.control > div.tooltip > p {
-        position:absolute;
-        top:5px;
-        left:5px;
-        display: block;
-        color: #6D6D6D;
-        opacity: 0;
-        font-size:14px;
-        transition: opacity 0.2s ease-out;
+
+    div.control > div.tooltip {
+        position: relative;
     }
+
+        div.control > div.tooltip > p {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            display: block;
+            color: #6D6D6D;
+            opacity: 0;
+            font-size: 14px;
+            transition: opacity 0.2s ease-out;
+        }
 
     div.control.focused > div.tooltip > p {
         opacity: 1;
+    }
+
+    div.control > div.input > div.messages {
+        font-size:14px;
+        color:red;
     }
