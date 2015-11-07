@@ -1,0 +1,17 @@
+﻿<div class="control" ng-form ng-if="field.isVisible(tunnel)" name="currentField" ng-class="{'focused':focus}">
+        <div class="label">
+            <label class="name-label" for="{{key}}">{{field.label}}</label>
+        </div>
+        <div class="input">
+            <input type="text" ng-model="field.value" name="{{key}}" ng-required="field.isRequire(tunnel)" ng-minlength="field.minlength" ng-maxlength="field.maxlength" ng-pattern="field.pattern" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" />
+            <div class="messages" ng-if="currentField[key].$touched" ng-messages="currentField[key].$error" role="alert">
+                <div ng-message="required">{{field.requireMessage}}</div>
+                <div ng-message="minlength">{{field.minlengthMessage}}</div>
+                <div ng-message="maxlength">{{field.maxlengthMessage}}</div>
+                <div ng-message="pattern">{{field.patternMessage}}</div>
+            </div>
+        </div>
+        <div class="tooltip">
+            <p ng-bind-html="field.tooltip"></p>
+        </div>
+</div>
