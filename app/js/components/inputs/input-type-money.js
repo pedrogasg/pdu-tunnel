@@ -1,12 +1,12 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
-    TunnelPhantom.directive('inputTypeMoney', InputTypeMonet);
+    TunnelPhantom.directive('inputTypeMoney', inputTypeMoney);
     var MONEY_REGEXP = /^\d+([,.]\d{2})?€$/,
         FLOAT_REGEXP = /^\d+[,.]\d$/,
         FLOAT_ZERO_REGEXP = /^\d+[,.]0€$/,
-        START_FLOAT_REGEXP = /^\d+[,.]€$/;
-
-    function InputTypeMonet() {
+        START_FLOAT_REGEXP = /^\d+[,.]€$/,
+        FIRST_ENTRY = /\d/;
+    function inputTypeMoney() {
         return {
             restrict: 'A',
             require: 'ngModel',
@@ -15,11 +15,14 @@
                     return parseFloat(moneyString.replace(',', '.'));
                 }
                 ctrl.$parsers.push(function (value) {
-                    console.log(value);
                     if (ctrl.$isEmpty(value)) return null;
-                    if (MONEY_REGEXP.test(value)) {
+                    var pars = MONEY_REGEXP.exec(value);
+                    if (pars && pars.length) {
                         var money = parseMoney(value);
                         if (!isNaN(money)) {
+                          if(pars[1] && scope.goToNextInput){
+                            scope.goToNextInput();
+                          }
                             return money;
                         }
                     }

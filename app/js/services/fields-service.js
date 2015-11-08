@@ -38,7 +38,7 @@
                 'name': 'yesornot',
                 'label': 'Yes or Not',
                 'group': 'CoolKids',
-                'value': 'yes',
+                'value': '',
                 'type': 'yesno',
                 'requireMessage': 'This Yes or Not field is required',
                 'nextField': 'second',
@@ -146,4 +146,4 @@
     }
 
     FieldsService.$inject = ['ProtoFieldFactory'];
-})()
+})();

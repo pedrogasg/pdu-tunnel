@@ -65,4 +65,4 @@
         }
     }
     ProtoFieldFactory.$inject = ['$log'];
-})()
+})();

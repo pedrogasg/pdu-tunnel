@@ -4,14 +4,14 @@
     </div>
     <div class="input">
         <label class="yesno-label" for="{{key}}-yes" ng-class="{'selected':field.value == field.yesValue}">
-            <span class="cicle"></span>
             {{ field.yesLabel }}
             <input id="{{key}}-yes" name="{{key}}" type="radio" ng-model="field.value" ng-required="field.isRequire(tunnel)" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" value="{{field.yesValue}}" />
+            <span class="cicle"></span>
         </label>
         <label class="yesno-label" for="{{key}}-no" ng-class="{'selected':field.value == field.noValue}">
-            <span class="cicle"></span>
             {{ field.noLabel }}
             <input id="{{key}}-no" name="{{key}}" type="radio" ng-model="field.value" ng-required="field.isRequire(tunnel)" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" value="{{field.noValue}}"/>
+            <span class="cicle"></span>
         </label>
     </div>
     <div class="tooltip">

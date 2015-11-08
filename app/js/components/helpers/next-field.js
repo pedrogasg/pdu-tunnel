@@ -18,17 +18,21 @@
                             }
                         });
                         if (scope.field.type === 'yesno') {
-                            elm.on('focus', function () {
-                                console.log(elm[0].value);
-                                auto = false;
+                            auto = false;
+                            elm.on('click', function () {
+                              next[0].focus();
+                              console.log('here');
                             });
                         }
                         if (scope.field.type === 'select') {
                             auto = false;
                             elm.one('mousedown', function () {
                                 auto = true;
-                            })
+                            });
                         }
+                    }
+                    scope.goToNextInput = function () {
+                      next[0].focus();
                     }
                     elm.on("keydown", function (e) {
                         var code = e.keyCode || e.which;
