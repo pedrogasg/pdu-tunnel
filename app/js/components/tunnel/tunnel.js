@@ -9,7 +9,6 @@
             controllerAs: 'tunnel',
             transclude: true,
             compile: function compile(tElement, tAttrs, transclude) {
-                console.log(tElement);
                 var fields = FieldsService.getFields(),
                     form = tElement.find('form'),
                     div, oldDiv;
@@ -35,13 +34,19 @@
     }
     function TunnelController($scope, $filter) {
         var tunnel = this;
+        tunnel.coClient = false;
         tunnel.submit = function () {
             console.log(tunnel);
-        }
+        };
         tunnel.setCurrentField = function (field) {
             tunnel.fieldLabel = field.label;
             tunnel.fieldGroup = field.group;
-        }
+        };
+        tunnel.validInput = function (field) {
+            if (field.name == "Etape1_Client_SituationFamilialeId") {
+                tunnel.coClient = field.value == 2 || field.value == 4;
+            }
+        };
         tunnel.filter = function (currentKey, list) {
             var fields = tunnel.fields;
             for (var key in fields) {
@@ -54,7 +59,7 @@
                 }
             }
             return list;
-        }
+        };
     }
     Tunnel.$inject = ['FieldsService'];
     TunnelController.$inject = ['$scope', '$filter'];

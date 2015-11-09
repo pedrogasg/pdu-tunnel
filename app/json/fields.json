@@ -1,0 +1,207 @@
+﻿[
+  {
+    'name': 'first',
+    'label': 'First',
+    'group': 'LittleNumbers',
+    'value': '',
+    'type': 'text',
+    'minlength': 4,
+    'maxlength': 5,
+    'requireMessage': 'This
+    first field
+    is required',
+    'minlengthMessage': '4
+    letters word
+    minimun',
+    'maxlengthMessage': '5
+    letters word
+    maximum',
+    'nextField': 'money',
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  },
+  {
+    'name': 'money',
+    'label': 'Money',
+    'group': 'CoolKids',
+    'value': '',
+    'type': 'money',
+    'minvalue': 1,
+    'maxvalue': 5000,
+    'requireMessage': 'The
+    money field
+    is mandatory',
+    'minvalueMessage': 'The
+    value entered
+    is less
+    than the
+    minimal value',
+    'maxvalueMessage': 'The
+    value entered
+    is superiur
+    than the
+    maximal value',
+    'parseMessage': 'The
+    input need
+    to have
+    a numeric
+    format',
+    'nextField': 'yesornot',
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  },
+  {
+    'name': 'yesornot',
+    'label': 'Yes
+    or Not',
+    'group': 'CoolKids',
+    'value': '',
+    'type': 'yesno',
+    'requireMessage': 'This
+    Yes or
+    Not field
+    is required',
+    'nextField': 'second',
+    'yesLabel': 'Yes',
+    'noLabel': 'No',
+    'yesValue': 'yes',
+    'noValue': 'no',
+    'autoChange': true,
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  },
+  {
+    'name': 'second',
+    'label': 'Second',
+    'group': 'LittleNumbers',
+    'value': '',
+    'type': 'number',
+    'minvalue': 0,
+    'maxvalue': 9,
+    'requireMessage': 'This
+    second field
+    is required',
+    'minvalueMessage': 'The
+    value entered
+    is less
+    than the
+    minimal value',
+    'maxvalueMessage': 'The
+    value entered
+    is superiur
+    than the
+    maximal value',
+    'numberMessage': 'The
+    input must
+    be a
+    Number',
+    'nextField': 'third',
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  },
+  {
+    'name': 'third',
+    'label': 'Third',
+    'group': 'LittleNumbers',
+    'value': '',
+    'type': 'month',
+    'minyear': 1945,
+    'maxyear': 2010,
+    'requireMessage': 'This
+    third field
+    is required',
+    'parseMessage': 'The
+    date must
+    have MM/YYYY
+    as format',
+    'minyearMessage': 'The
+    date must
+    be superior
+    to 1945',
+    'maxyearMessage': 'The
+    date must
+    be inferior
+    to 2010',
+    'hidden': true,
+    'binds': [
+      {
+        'name': 'first',
+        'values': [
+          'third',
+          'show'
+        ]
+      },
+      {
+        'name': 'second',
+        'regexp': '
+        [ 0 -9 ]
+        '
+      }
+    ],
+    'nextField': 'fourth',
+    'autoChange': true,
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  },
+  {
+    'name': 'fourth',
+    'label': 'Fourth',
+    'group': 'BigNumbers',
+    'value': '',
+    'values': sectors,
+    'type': 'select',
+    'requireMessage': 'This
+    fourth field
+    is required',
+    'hidden': true,
+    'binds': [
+      {
+        'name': 'third',
+        'values': [
+          '01/2009',
+        ]
+      }
+    ],
+    'filters': {
+      'fith': 'IdSecteur'
+    },
+    'nextField': 'fith',
+    'autoChange': true,
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  },
+  {
+    'name': 'fith',
+    'label': 'Fith',
+    'group': 'BigNumbers',
+    'value': '',
+    'values': professions,
+    'type': 'select',
+    'requireMessage': 'This
+    fith field
+    is required',
+    'hidden': true,
+    'binds': [
+      {
+        'name': 'fourth',
+        'values': [
+          '*'
+        ]
+      }
+    ],
+    'tooltip': '<em>Html
+    stuff</em><br /><strong>Hard
+    stuff</strong>'
+  }
+
+],
+
+
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,21,23 ]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 37, 38]

@@ -24,6 +24,9 @@
                         }
                     }
                 }
+                if (visible && $this.coClient) {
+                    visible = $tunnel.coClient;
+                }
                 return visible;
             }
         },

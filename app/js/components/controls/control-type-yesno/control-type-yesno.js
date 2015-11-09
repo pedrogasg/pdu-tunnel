@@ -10,7 +10,10 @@
                 'field': '=field',
                 'key': '=parentKey'
             },
-            transclude: true
+            transclude: true,
+            link: function (scope, elm, attr) {
+                scope.field['element'] = elm;
+            }
         }
     }
 })();
