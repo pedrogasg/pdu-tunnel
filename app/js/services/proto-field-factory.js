@@ -55,6 +55,7 @@
     _protos['select'] = _basic;
     _protos['money'] = _basic;
     _protos['yesno'] = _basic;
+    _protos['date'] = _basic;
     function _getPrototype(type,$log) {
         if (type in _protos) {
             return _protos[type];
