@@ -35,6 +35,7 @@
     function TunnelController($scope, $filter) {
         var tunnel = this;
         tunnel.coClient = false;
+        tunnel.element = document.querySelector('.tunnel-scroll');
         tunnel.submit = function () {
             console.log(tunnel);
         };
@@ -43,6 +44,7 @@
             tunnel.fieldGroup = field.group;
         };
         tunnel.validInput = function (field) {
+            tunnel.element.style.top = -field.next.element[0].offsetTop+'px';
             if (field.name == "Etape1_Client_SituationFamilialeId") {
                 tunnel.coClient = field.value == 2 || field.value == 4;
             }

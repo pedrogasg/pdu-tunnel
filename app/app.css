@@ -23,6 +23,7 @@ div.header {
     width: 1024px;
     background-color: #fafafa;
     z-index: 0;
+    overflow:hidden;
 }
 
     .tunnel > .tunnel-background-group {
@@ -73,6 +74,7 @@ div.header {
         width: 100%;
         height: auto;
         z-index: 1;
+        transition: top 0.2s ease-out;
     }
 
         .tunnel > .tunnel-scroll > .tunnel-title {

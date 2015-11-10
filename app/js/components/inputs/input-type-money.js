@@ -44,6 +44,9 @@
                             p2 = p2 + 1;
                             returnValue = val
                         }
+                        if (val === 0) {
+                            returnValue = 0;
+                        }
                         elm.val(valString + '€');
                         elm[0].setSelectionRange(p1, p2);
                     }
@@ -54,7 +57,7 @@
                 if (typeof attr.minvalue !== 'undefined' || attr.minvalue) {
                     var minVal;
                     ctrl.$validators.minvalue = function (value) {
-                        return minVal === 'undefined' || isNaN(minVal) || Number(value) > Number(minVal);
+                        return minVal === 'undefined' || isNaN(minVal) || Number(value) >= Number(minVal);
                     };
                     attr.$observe('minvalue', function (val) {
                         minVal = parseInt(val);
@@ -65,7 +68,7 @@
                 if (typeof attr.maxvalue !== 'undefined' || attr.maxvalue) {
                     var maxVal;
                     ctrl.$validators.maxvalue = function (value) {
-                        return maxVal === 'undefined' || isNaN(maxVal) || Number(value) < Number(maxVal);
+                        return maxVal === 'undefined' || isNaN(maxVal) || Number(value) <= Number(maxVal);
                     };
                     attr.$observe('maxvalue', function (val) {
                         maxVal = parseInt(val);

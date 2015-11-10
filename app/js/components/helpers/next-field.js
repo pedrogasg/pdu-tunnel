@@ -12,10 +12,7 @@
                     if (auto) {
                         ctrl.$viewChangeListeners.push(function (t) {
                             if (auto && ctrl.$valid) {
-                                scope.tunnel.validInput(scope.field);
-                                setTimeout(function () {
-                                    scope.goToNextInput();
-                                }, 100);
+                                scope.goToNextInput();
                             }
                         });
                         if (scope.field.type === 'yesno') {
@@ -32,24 +29,24 @@
                         }
                     }
                     scope.goToNextInput = function () {
+                        scope.tunnel.validInput(scope.field);
                         setTimeout(function () {
                             var field = scope.field.next,
                                 tunnel = scope.tunnel;
                             if (field) {
                                 while (!field.isVisible(tunnel)) {
-                                    field = field.next;                                    
+                                    field = field.next;
                                 }
                                 var input = field.element.find(field.subtype);
                                 input[0].focus();
                             }
-                        },100);
+                        }, 100);
                     }
                     elm.on("keydown", function (e) {
                         var code = e.keyCode || e.which;
                         if (!e.shiftKey && (code === 13 || code == 9)) {
                             e.preventDefault();
                             if (ctrl.$valid) {
-                                console.log(scope.field);
                                 scope.goToNextInput();
                             } else {
                                 ctrl.$setTouched();

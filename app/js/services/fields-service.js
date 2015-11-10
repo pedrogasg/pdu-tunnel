@@ -18,7 +18,7 @@
       "values": [
         {
             "id": 1,
-            "label": "Célebataire"
+            "label": "Célibataire"
         },
         {
             "id": 2,
@@ -161,8 +161,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
@@ -234,8 +234,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
@@ -248,7 +248,7 @@
         },
         {
             "name": "Formulaire_E_DebutContratTravailDate2",
-            "label": "date de création de votre société",
+            "label": "Date de création de votre société",
             "group": "Situation professionnelle",
             "value": "",
             "type": "month",
@@ -257,8 +257,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
@@ -293,7 +293,7 @@
   },
         {
             "name": "Formulaire_E_DebutContratTravailDate3",
-            "label": "date de départ à la retraite",
+            "label": "Date de départ à la retraite",
             "group": "Situation professionnelle",
             "value": "",
             "type": "month",
@@ -302,8 +302,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
@@ -378,8 +378,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
@@ -402,8 +402,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
@@ -449,8 +449,8 @@
             "maxyear": 2015,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Mauvais Format : MM/YYYY merci de respecter le format",
-            "minyearMessage": "La date doit etre superieur à 1944",
-            "maxyearMessage": "La date doit etre inferieur à 2016",
+            "minyearMessage": "La date doit etre superieur à 1945",
+            "maxyearMessage": "La date doit etre inferieur à 2015",
             "hidden": true,
             "binds": [
             {
