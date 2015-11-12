@@ -12,13 +12,13 @@
                     if (auto) {
                         ctrl.$viewChangeListeners.push(function (t) {
                             if (auto && ctrl.$valid) {
-                                scope.goToNextInput();
+                                scope.tunnel.goToNextInput(scope.field);
                             }
                         });
                         if (scope.field.type === 'yesno') {
                             auto = false;
                             elm.on('click', function () {
-                                scope.goToNextInput();
+                                scope.tunnel.goToNextInput(scope.field);
                             });
                         }
                         if (scope.field.type === 'select') {
@@ -28,26 +28,13 @@
                             });
                         }
                     }
-                    scope.goToNextInput = function () {
-                        scope.tunnel.validInput(scope.field);
-                        setTimeout(function () {
-                            var field = scope.field.next,
-                                tunnel = scope.tunnel;
-                            if (field) {
-                                while (!field.isVisible(tunnel)) {
-                                    field = field.next;
-                                }
-                                var input = field.element.find(field.subtype);
-                                input[0].focus();
-                            }
-                        }, 100);
-                    }
+                    
                     elm.on("keydown", function (e) {
                         var code = e.keyCode || e.which;
                         if (!e.shiftKey && (code === 13 || code == 9)) {
                             e.preventDefault();
                             if (ctrl.$valid) {
-                                scope.goToNextInput();
+                                scope.tunnel.goToNextInput(scope.field);
                             } else {
                                 ctrl.$setTouched();
                                 scope.$apply();

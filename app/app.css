@@ -121,12 +121,16 @@ div.control {
     background-color: transparent;
 }
 
-    div.control > div.tooltip, div.control > div.input, div.control > div.label {
-        width: 33.33%;
+    div.control > div.tooltip, div.control > div.input{
+        width: 30%;
         float: left;
         padding: 25px 0;
     }
-
+div.control > div.label {
+    float: left;
+        padding: 25px 0;
+        width:40%;
+}
         div.control > div.label > span {
             display: block;
             margin-left: 20px;
@@ -205,3 +209,18 @@ div.control {
     div.control > div.input > label.yesno-label>input[type=radio]:focus + span.cicle{
             box-shadow: 0px 0px 0px 2px #E77F00
     }
+#down-arrow,#up-arrow{
+    height:50px;
+    width:50px;
+    top:20px;
+    position:absolute;
+    z-index:3;
+    cursor:pointer;
+}
+#down-arrow{
+    right:20px;
+}
+
+#up-arrow{
+    right:90px;
+}

@@ -16,7 +16,11 @@
         function getMonthTypeParts(value) {
             return MONTH_DATE_REGEXP.exec(value);
         }
-        function parseMonth(value, callback){
+        function parseMonth(value, callback) {
+            if (~value.indexOf('//')) {
+                callback(value.replace('//','/'));
+                return undefined;
+            }
           if (ONE_DIGIT_MONTH.test(value)) {
               var month = parseInt(value);
               if (month < 1) month = 1;

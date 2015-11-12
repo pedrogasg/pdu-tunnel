@@ -20,8 +20,8 @@
                     if (pars && pars.length) {
                         var money = parseMoney(value);
                         if (!isNaN(money)) {
-                          if(pars[1] && scope.goToNextInput){
-                            scope.goToNextInput();
+                            if(pars[1] && scope.tunnel.goToNextInput){
+                              scope.tunnel.goToNextInput(scope.field);
                           }
                             return money;
                         }
@@ -42,7 +42,7 @@
                         if (FLOAT_REGEXP.test(valString)) {
                             valString += '0';
                             p2 = p2 + 1;
-                            returnValue = val
+                            returnValue = val;
                         }
                         if (val === 0) {
                             returnValue = 0;
