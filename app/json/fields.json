@@ -1,207 +1,58 @@
 ﻿[
+
+
   {
-    'name': 'first',
-    'label': 'First',
-    'group': 'LittleNumbers',
-    'value': '',
-    'type': 'text',
-    'minlength': 4,
-    'maxlength': 5,
-    'requireMessage': 'This
-    first field
-    is required',
-    'minlengthMessage': '4
-    letters word
-    minimun',
-    'maxlengthMessage': '5
-    letters word
-    maximum',
-    'nextField': 'money',
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
-  },
-  {
-    'name': 'money',
-    'label': 'Money',
-    'group': 'CoolKids',
-    'value': '',
-    'type': 'money',
-    'minvalue': 1,
-    'maxvalue': 5000,
-    'requireMessage': 'The
-    money field
-    is mandatory',
-    'minvalueMessage': 'The
-    value entered
-    is less
-    than the
-    minimal value',
-    'maxvalueMessage': 'The
-    value entered
-    is superiur
-    than the
-    maximal value',
-    'parseMessage': 'The
-    input need
-    to have
-    a numeric
-    format',
-    'nextField': 'yesornot',
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
-  },
-  {
-    'name': 'yesornot',
-    'label': 'Yes
-    or Not',
-    'group': 'CoolKids',
-    'value': '',
-    'type': 'yesno',
-    'requireMessage': 'This
-    Yes or
-    Not field
-    is required',
-    'nextField': 'second',
-    'yesLabel': 'Yes',
-    'noLabel': 'No',
-    'yesValue': 'yes',
-    'noValue': 'no',
-    'autoChange': true,
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
-  },
-  {
-    'name': 'second',
-    'label': 'Second',
-    'group': 'LittleNumbers',
-    'value': '',
-    'type': 'number',
-    'minvalue': 0,
-    'maxvalue': 9,
-    'requireMessage': 'This
-    second field
-    is required',
-    'minvalueMessage': 'The
-    value entered
-    is less
-    than the
-    minimal value',
-    'maxvalueMessage': 'The
-    value entered
-    is superiur
-    than the
-    maximal value',
-    'numberMessage': 'The
-    input must
-    be a
-    Number',
-    'nextField': 'third',
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
-  },
-  {
-    'name': 'third',
-    'label': 'Third',
-    'group': 'LittleNumbers',
-    'value': '',
-    'type': 'month',
-    'minyear': 1945,
-    'maxyear': 2010,
-    'requireMessage': 'This
-    third field
-    is required',
-    'parseMessage': 'The
-    date must
-    have MM/YYYY
-    as format',
-    'minyearMessage': 'The
-    date must
-    be superior
-    to 1945',
-    'maxyearMessage': 'The
-    date must
-    be inferior
-    to 2010',
-    'hidden': true,
-    'binds': [
-      {
-        'name': 'first',
-        'values': [
-          'third',
-          'show'
-        ]
-      },
-      {
-        'name': 'second',
-        'regexp': '
-        [ 0 -9 ]
-        '
-      }
-    ],
-    'nextField': 'fourth',
-    'autoChange': true,
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
-  },
-  {
-    'name': 'fourth',
-    'label': 'Fourth',
-    'group': 'BigNumbers',
-    'value': '',
-    'values': sectors,
-    'type': 'select',
-    'requireMessage': 'This
-    fourth field
-    is required',
-    'hidden': true,
-    'binds': [
-      {
-        'name': 'third',
-        'values': [
-          '01/2009',
-        ]
-      }
-    ],
-    'filters': {
-      'fith': 'IdSecteur'
+    "Guid": "02323154-ba7e-41f4-b0e7-930e1fcaf53a",
+    "Etape": 192,
+    "data": {
+      "Etape1_Client_SituationFamilialeId": "1",
+      "Etape1_Client_NbEnfantACharge": "0",
+      "Etape1_Conjoint_DateFinValiditeTitreSejour": null,
+      "Etape1_Client_OptIn": true,
+      "Etape2_Client_Residence_TypeId": 1,
+      "Formulaire_ResidenceDepuisMois": "01",
+      "Formulaire_ResidenceDepuis": "2001",
+      "Etape2_Client_ActiviteId": 1,
+      "Etape2_Client_Activite_ProfessionId": 1,
+      "Etape2_Client_Activite_TypeContratTravailId": 1,
+      "Formulaire_E_DebutContratTravailMois": "01",
+      "Formulaire_E_DebutContratTravail": "2001",
+      "Etape3_Client_Revenus_Salaire": "5000",
+      "Etape3_Client_Revenus_ArretMaladieDurant3DerniersMois": null,
+      "Etape3_Client_Revenus_PrestationFamiliale": 0,
+      "Etape3_Client_Revenus_AllocationOuAideLogement": 0,
+      "Etape3_Client_Revenus_AutresRevenus": 0,
+      "Etape3_Client_Revenus_PensionPercues": 0,
+      "Etape3_Client_Revenus_IndemnitesPercues": 0,
+      "Etape3_Client_Charges_Loyer": "200",
+      "Etape3_Client_Charges_CreditAuto": 0,
+      "Etape3_Client_Charges_CreditConso": 0,
+      "Etape3_Client_Charges_PensionMontant": 0,
+      "Etape3_Client_Charges_Dettes": [ ],
+      "Etape3_Client_BanqueId": "2",
+      "Etape3_Client_Banque_Depuis": "1990",
+      "Etape3_Client_FICP_FCC": "false",
+      "Etape1_Client_CiviliteId": "1",
+      "Etape1_Client_Nom": "Fillastre Pedro",
+      "Etape1_Client_Prenom": "Fillastre",
+      "Etape1_Client_NaissanceCodePostal": "75015",
+      "Etape1_Client_NaissanceVille": "PARIS",
+      "Formulaire_E_NaissanceJour": "16",
+      "Formulaire_E_NaissanceMois": "07",
+      "Formulaire_E_NaissanceAnnee": "1970",
+      "Etape1_Client_DateFinValiditeTitreSejour": null,
+      "Etape1_Client_NaissanceDepartementId": "75",
+      "Etape1_Client_Tel_Mobile": "0601100000",
+      "Etape1_Client_Adresse_Rue": "12 tue de ma roquette",
+      "Etape1_Client_Adresse_CodePostal": "75001",
+      "Etape1_Client_Adresse_Ville": "PARIS",
+      "Etape1_Client_Adresse_PaysId": 78,
+      "Emprunteur_TypeProduitAssurance": 1,
+      "Proposition_Montant": "10000",
+      "Client_ProjetId": "14",
+      "Proposition_Duree": 36,
+      "TypeTunnelId": 4
     },
-    'nextField': 'fith',
-    'autoChange': true,
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
-  },
-  {
-    'name': 'fith',
-    'label': 'Fith',
-    'group': 'BigNumbers',
-    'value': '',
-    'values': professions,
-    'type': 'select',
-    'requireMessage': 'This
-    fith field
-    is required',
-    'hidden': true,
-    'binds': [
-      {
-        'name': 'fourth',
-        'values': [
-          '*'
-        ]
-      }
-    ],
-    'tooltip': '<em>Html
-    stuff</em><br /><strong>Hard
-    stuff</strong>'
+    "Categorie": 1
   }
-
-],
-
-
-[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,21,23 ]
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 37, 38]
+]

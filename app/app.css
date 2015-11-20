@@ -23,7 +23,7 @@ div.header {
     width: 1024px;
     background-color: #fafafa;
     z-index: 0;
-    overflow:hidden;
+    overflow: hidden;
 }
 
     .tunnel > .tunnel-background-group {
@@ -77,11 +77,15 @@ div.header {
         transition: top 0.2s ease-out;
     }
 
-        .tunnel > .tunnel-scroll > .tunnel-title {
+        .tunnel > .tunnel-scroll > form > div > div {
+            min-height: 105px;
+        }
+
+        .tunnel > .tunnel-scroll > form > div.tunnel-whitespace {
             height: 105px;
         }
 
-select, input[type=text],input[type=number],input[type=date] {
+select, input[type=text], input[type=number], input[type=date] {
     width: 206px;
     padding-left: 20px;
     height: 49px;
@@ -97,7 +101,7 @@ select {
     width: 226px;
 }
 
-    select:focus, input[type=text]:focus,input[type=number]:focus,input[type=date]:focus {
+    select:focus, input[type=text]:focus, input[type=number]:focus, input[type=date]:focus {
         border-style: solid;
         border-width: 2px;
         border-color: #E77F00;
@@ -121,16 +125,18 @@ div.control {
     background-color: transparent;
 }
 
-    div.control > div.tooltip, div.control > div.input{
+    div.control > div.tooltip, div.control > div.input {
         width: 30%;
         float: left;
         padding: 25px 0;
     }
-div.control > div.label {
-    float: left;
+
+    div.control > div.label {
+        float: left;
         padding: 25px 0;
-        width:40%;
-}
+        width: 40%;
+    }
+
         div.control > div.label > span {
             display: block;
             margin-left: 20px;
@@ -146,7 +152,7 @@ div.control > div.label {
 
     div.control > div.label > .name-label {
         display: block;
-        margin-left: 15px;
+        margin:0 0 0 15px;
         padding: 12px 0;
         font-size: 20px;
         transition: color 0.2s ease-out;
@@ -160,7 +166,7 @@ div.control > div.label {
         position: relative;
     }
 
-        div.control > div.tooltip > p {
+        div.control > div.tooltip > div {
             position: absolute;
             top: 5px;
             left: 5px;
@@ -171,56 +177,75 @@ div.control > div.label {
             transition: opacity 0.2s ease-out;
         }
 
-    div.control.focused > div.tooltip > p {
+            div.control > div.tooltip > div > p {
+                margin-bottom: 0;
+            }
+
+            div.control > div.tooltip > div > a.skipper {
+                color: #E77F00;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+    div.control.focused > div.tooltip > div, div.control.current > div.tooltip > div {
         opacity: 1;
     }
 
     div.control > div.input > div.messages {
-        font-size:14px;
-        color:red;
+        font-size: 14px;
+        color: red;
     }
-    div.control > div.input > label.yesno-label{
-        margin-right:10px;
-        margin-top:31px;
-        padding:5px 5px 5px 30px;
-        position:relative;
-        overflow:hidden;
-        display:inline-block;
+        div.control > div.input > div.messages.warning {
+        color: #E77F00;
     }
-    div.control > div.input > label.yesno-label > span.cicle{
-        border:2px solid #0EA2A2;
-        padding:0;
-        margin:0px;
-        width:20px;
-        height:20px;
-        border-radius:12px;
-        position:absolute;
-        display:block;
-        top:2px;
-        left:2px;
+    div.control > div.input > label.yesno-label {
+        margin-right: 10px;
+        margin-top: 15px;
+        padding: 5px 5px 5px 30px;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
     }
-        div.control > div.input > label.yesno-label.selected > span.cicle {
-            background-color:#0ea2a2;
+
+        div.control > div.input > label.yesno-label > span.cicle {
+            border: 2px solid #0EA2A2;
+            padding: 0;
+            margin: 0px;
+            width: 20px;
+            height: 20px;
+            border-radius: 12px;
+            position: absolute;
+            display: block;
+            top: 2px;
+            left: 2px;
         }
-    div.control > div.input > label.yesno-label>input[type=radio]{
-        position:absolute;
-        left:-30px;
-    }
-    div.control > div.input > label.yesno-label>input[type=radio]:focus + span.cicle{
-            box-shadow: 0px 0px 0px 2px #E77F00
-    }
-#down-arrow,#up-arrow{
-    height:50px;
-    width:50px;
-    top:20px;
-    position:absolute;
-    z-index:3;
-    cursor:pointer;
-}
-#down-arrow{
-    right:20px;
+
+        div.control > div.input > label.yesno-label.selected > span.cicle {
+            background-color: #0ea2a2;
+        }
+
+        div.control > div.input > label.yesno-label > input[type=radio] {
+            position: absolute;
+            left: -30px;
+        }
+
+            div.control > div.input > label.yesno-label > input[type=radio]:focus + span.cicle {
+                box-shadow: 0px 0px 0px 2px #E77F00;
+            }
+
+#down-arrow, #up-arrow {
+    height: 50px;
+    width: 50px;
+    top: 20px;
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
 }
 
-#up-arrow{
-    right:90px;
+#down-arrow {
+    right: 20px;
+}
+
+#up-arrow {
+    right: 90px;
 }

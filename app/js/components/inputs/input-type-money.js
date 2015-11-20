@@ -11,11 +11,17 @@
             restrict: 'A',
             require: 'ngModel',
             link: function (scope, elm, attr, ctrl) {
+                var minVal;
                 function parseMoney(moneyString) {
                     return parseFloat(moneyString.replace(',', '.'));
                 }
                 ctrl.$parsers.push(function (value) {
                     if (ctrl.$isEmpty(value)) return null;
+                    if (minVal !== undefined && minVal == 0 && value == "0" && scope.tunnel.goToNextInput) {
+                        scope.tunnel.goToNextInput(scope.field);
+                        elm.val('0€');
+                        return 0
+                    }
                     var pars = MONEY_REGEXP.exec(value);
                     if (pars && pars.length) {
                         var money = parseMoney(value);
@@ -55,7 +61,7 @@
 
 
                 if (typeof attr.minvalue !== 'undefined' || attr.minvalue) {
-                    var minVal;
+                    
                     ctrl.$validators.minvalue = function (value) {
                         return minVal === 'undefined' || isNaN(minVal) || Number(value) >= Number(minVal);
                     };

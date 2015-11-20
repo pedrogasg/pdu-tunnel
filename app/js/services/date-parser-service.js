@@ -7,7 +7,8 @@
         MONTH_DATE_REGEXP = /^(0[1-9]|1[0-2])\/(\d{4})$/,
         MONTH_ONLY_REGEXP = /^(0[1-9]|1[0-2])$/,
         ONE_DIGIT_MONTH = /^[2-9]$/,
-        DECEMBER = /^1[3-9]$/;
+        DECEMBER = /^1[3-9]$/,
+        YEAR_REGEXP = /^\d{4}$/;
     function DateParserService(ProtoFieldFactory) {
 
         function isMonthType(value) {
@@ -15,6 +16,15 @@
         }
         function getMonthTypeParts(value) {
             return MONTH_DATE_REGEXP.exec(value);
+        }
+        function getYear(value) {
+            if (MONTH_DATE_REGEXP.test(value)) {
+                var parts = MONTH_DATE_REGEXP.exec(value)
+                return Number(parts[2]);
+            }
+            if (YEAR_REGEXP.test(value)) {
+                return Number(value);
+            }
         }
         function parseMonth(value, callback) {
             if (~value.indexOf('//')) {
@@ -44,7 +54,8 @@
         return {
             'isMonthType': isMonthType,
             'parseMonth':parseMonth,
-            'getMonthTypeParts':getMonthTypeParts
+            'getMonthTypeParts': getMonthTypeParts,
+            'getYear':getYear
         }
     }
 

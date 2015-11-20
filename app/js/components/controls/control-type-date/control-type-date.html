@@ -1,14 +1,17 @@
-﻿<div class="control" ng-form ng-if="field.isVisible(tunnel)" name="currentField" ng-class="{'focused':focus}">
+﻿<div class="control" ng-form ng-if="field.isVisible(tunnel)" name="currentField" ng-class="{'focused':focus, 'current':tunnel.isCurrentField(field)}">
     <div class="label">
         <label class="name-label" for="{{key}}">{{field.label}}</label>
     </div>
     <div class="input">
-        <input type="date" ng-model="field.value" name="{{key}}" ng-required="field.isRequire(tunnel)" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" />
+        <input type="date" ng-model="field.value" name="{{key}}" max="2015-11-13" min="1945-01-01" ng-required="field.isRequire(tunnel)" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" />
         <div class="messages" ng-if="currentField[key].$touched" ng-messages="currentField[key].$error" role="alert">
             <div ng-message="required">{{field.requireMessage}}</div>
         </div>
     </div>
     <div class="tooltip">
-        <p ng-bind-html="field.tooltip"></p>
+        <div>
+            <p ng-bind-html="field.tooltip"></p>
+            <a ng-if="field.skip" class="skipper" ng-click="tunnel.nextInput()">{{ field.skipMessage }}</a>
+        </div>
     </div>
 </div>

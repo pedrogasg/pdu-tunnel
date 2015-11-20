@@ -13,6 +13,14 @@
             transclude: true,
             link: function (scope, elm, attr) {
                 scope.field['element'] = elm;
+                elm.on('mousedown', function (e) {
+                    if (!elm[0].firstElementChild.classList.contains('focused')) {
+                        e.preventDefault();
+                        var field = scope.field,
+                            input = elm.find(field.subtype);
+                        input[0].focus();
+                    }
+                });
             }
         }
     }
