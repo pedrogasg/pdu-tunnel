@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeMonth', ControlTypeMonth);
-    function ControlTypeMonth() {
+    function ControlTypeMonth(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-month/control-type-month.html',
@@ -12,8 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
+              elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypeMonth.$inject = ['elementBindService'];
 })();

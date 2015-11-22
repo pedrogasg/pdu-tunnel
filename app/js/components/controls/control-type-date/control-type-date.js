@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeDate', ControlTypeDate);
-    function ControlTypeDate() {
+    function ControlTypeDate(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-date/control-type-date.html',
@@ -12,8 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
+              elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypeDate.$inject = ['elementBindService'];
 })();

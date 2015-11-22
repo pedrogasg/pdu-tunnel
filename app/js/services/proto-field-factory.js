@@ -74,7 +74,18 @@
                 }
                 return returnValue;
             }
-        }
+        },
+        'onFocus': {
+            'enumerable': false,
+            'writable': false,
+            'configurable': false,
+            'value':function(input){
+                var event;
+                event = document.createEvent('MouseEvents');
+                event.initMouseEvent('mousedown', true, true, window);
+                input.dispatchEvent(event);
+              }
+            }
     },_basic);
     _protos['text'] =  _basic;
     _protos['number'] = _basic;

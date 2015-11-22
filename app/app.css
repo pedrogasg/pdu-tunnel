@@ -28,7 +28,7 @@ div.header {
 
     .tunnel > .tunnel-background-group {
         padding: 1px 20px;
-        font-size: 12px;
+        font-size: 13px;
         color: #6F9B9A;
         background-color: white;
         border: 1px solid #e7e7e7;
@@ -85,7 +85,7 @@ div.header {
             height: 105px;
         }
 
-select, input[type=text], input[type=number], input[type=date] {
+select, input[type=text], input[type=number], input[type=date],input[type="submit"] {
     width: 206px;
     padding-left: 20px;
     height: 49px;
@@ -96,7 +96,9 @@ select, input[type=text], input[type=number], input[type=date] {
     border-color: #e0e0e0;
     box-shadow: 1px 3px 0px 0px #F1F1F1;
 }
-
+input[type="submit"] {
+  clear: both;
+}
 select {
     width: 226px;
 }
@@ -106,6 +108,11 @@ select {
         border-width: 2px;
         border-color: #E77F00;
         outline: none !important;
+
+    }
+    select:focus::-ms-value {
+      background-color: white;
+      color: black;
     }
 
     select.ng-touched.ng-invalid, input[type=text].ng-touched.ng-invalid, input[type=number].ng-touched.ng-invalid {
@@ -248,4 +255,17 @@ div.control {
 
 #up-arrow {
     right: 90px;
+}
+label.optin{
+  font-size: 12px;
+    display: block;
+    position: relative;
+    opacity: 0.6;
+    margin-top:3px;
+}
+label.optin>input{
+  display: block;
+margin-top: 1px;
+float: left;
+margin-right: 2px;
 }

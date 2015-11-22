@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeSelect', ControlTypeSelect);
-    function ControlTypeSelect() {
+    function ControlTypeSelect(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-select/control-type-select.html',
@@ -12,16 +12,18 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
-                elm.on('mousedown', function (e) {
-                    if (!elm[0].firstElementChild.classList.contains('focused')) {
-                        e.preventDefault();
-                        var field = scope.field,
-                            input = elm.find(field.subtype);
-                        input[0].focus();
-                    }
-                });
+              elementBindService.initElementBindings(elm,scope);
+              scope.autoOpen = function(){
+                console.log('here');
+                var event;
+                event = document.createEvent('MouseEvents');
+                event.initMouseEvent('mousedown', true, true, window);
+                console.log(elm.find('select')[0]);
+                elm.find('select')[0].dispatchEvent(event);
+              }
             }
         }
     }
+
+    ControlTypeSelect.$inject = ['elementBindService'];
 })();

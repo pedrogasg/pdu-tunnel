@@ -9,7 +9,7 @@
         ONE_DIGIT_MONTH = /^[2-9]$/,
         DECEMBER = /^1[3-9]$/,
         YEAR_REGEXP = /^\d{4}$/;
-    function DateParserService(ProtoFieldFactory) {
+    function DateParserService() {
 
         function isMonthType(value) {
             return MONTH_DATE_REGEXP.test(value);

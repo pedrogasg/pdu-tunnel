@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeMoney', ControlTypeMoney);
-    function ControlTypeMoney() {
+    function ControlTypeMoney(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-money/control-type-money.html',
@@ -12,8 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
+              elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypeMoney.$inject = ['elementBindService'];
 })();

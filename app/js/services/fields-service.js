@@ -12,9 +12,10 @@
   {
       "name": "Etape1_Client_SituationFamilialeId",
       "label": "Situation familiale",
-      "group": "Situation personnelle",
+      "group": "I. Situation personnelle",
       "type": "select",
       "subtype": "select",
+      "hasCoClient":[2,4],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "values": [
         {
@@ -31,7 +32,7 @@
         },
         {
             "id": 4,
-            "label": "PACS"
+            "label": "Vie marital / PACS"
         },
         {
             "id": 5,
@@ -48,7 +49,7 @@
   {
       "name": "Etape1_DejaMarie",
       "label": "Précédemment marié(e) ",
-      "group": "Situation personnelle",
+      "group": "I. Situation personnelle",
       "type": "yesno",
       "subtype": "input",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -69,11 +70,11 @@
   {
       "name": "Etape1_JugementDivorce",
       "label": "Jugement de divorce",
-      "group": "Situation personnelle",
+      "group": "I. Situation personnelle",
       "type": "yesno",
       "subtype": "input",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
-      "tooltip": "Vous disposez d'un jugement de divorce ou d'une ordonnance de non conciliation",
+      "tooltip": "Vous disposez d'un jugement de divorce ou d'une ordonnance de non conciliation.",
       "yesLabel": "Oui",
       "noLabel": "Non",
       "yesValue": "true",
@@ -95,7 +96,7 @@
   {
       "name": "Etape1_Client_NbEnfantACharge",
       "label": "Nombre d'enfants à charge",
-      "group": "Situation personnelle",
+      "group": "I. Situation personnelle",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -147,7 +148,7 @@
   }, {
       "name": "Etape2_Client_Residence_TypeId",
       "label": "Logement",
-      "group": "Situation personnelle",
+      "group": "I. Situation personnelle",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -158,7 +159,7 @@
         {
             "name": "Etape2_Client_Residence_Date",
             "label": "Date d'arrivée dans votre logement",
-            "group": "Situation personnelle",
+            "group": "I. Situation personnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -180,7 +181,7 @@
         {
             "name": "Etape2_Client_Activite_SecteurId",
             "label": "Secteur d'activité",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "values": sectors,
             "type": "select",
@@ -195,7 +196,7 @@
         {
             "name": "Etape2_Client_Activite_ProfessionId",
             "label": "Profession",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "values": professions,
             "type": "select",
@@ -214,7 +215,7 @@
         {
             "name": "Etape2_Client_Activite_TypeContratTravailId",
             "label": "Contrat de travail",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "values": contrats,
             "type": "select",
@@ -231,7 +232,7 @@
         {
             "name": "Formulaire_E_DebutContratTravailDate",
             "label": "Date d'embauche",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -249,12 +250,12 @@
             }],
             "nextField": true,
             "autoChange": true,
-            "tooltip": "Chez le même employeur depuis"
+            "tooltip": "Chez le même employeur depuis."
         },
         {
             "name": "Formulaire_E_DebutContratTravailDate2",
             "label": "Date de création de votre société",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -272,12 +273,12 @@
             }],
             "nextField": true,
             "autoChange": true,
-            "tooltip": "Date de création de la société que  vous gérez ou dirigez"
+            "tooltip": "Date de création de la société que  vous gérez ou dirigez."
         },
   {
       "name": "Etape2_Client_LiquidationOuProcedure",
       "label": "Liquidation judicaire",
-      "group": "Situation professionnelle",
+      "group": "II. Situation professionnelle",
       "type": "yesno",
       "subtype": "input",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -294,12 +295,12 @@
       ],
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Une de vos sociétés est en liquidation ou en procédure collective"
+      "tooltip": "Une de vos sociétés est en liquidation ou en procédure collective."
   },
         {
             "name": "Formulaire_E_DebutContratTravailDate3",
             "label": "Date de départ à la retraite",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -321,7 +322,7 @@
         {
             "name": "CEtape2_Client_Activite_SecteurId",
             "label": "Secteur d'activité du  conjoint",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "values": sectors,
             "type": "select",
@@ -337,7 +338,7 @@
         {
             "name": "CEtape2_Client_Activite_ProfessionId",
             "label": "Profession du conjoint",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "values": professions,
             "type": "select",
@@ -357,7 +358,7 @@
         {
             "name": "CEtape2_Client_Activite_TypeContratTravailId",
             "label": "Contrat de travail du conjoint",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "values": contrats,
             "type": "select",
@@ -375,7 +376,7 @@
         {
             "name": "CFormulaire_E_DebutContratTravailDate",
             "label": "Date d'embauche du conjoint",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -393,13 +394,13 @@
             }],
             "nextField": true,
             "autoChange": true,
-            "tooltip": "Date d'entrée de votre conjoint chez son employeur actuel",
+            "tooltip": "Date d'entrée de votre conjoint chez son employeur actuel.",
             "coClient": true
         },
         {
             "name": "CFormulaire_E_DebutContratTravailDate2",
             "label": "Création de la société du conjoint",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -417,13 +418,13 @@
             }],
             "nextField": true,
             "autoChange": true,
-            "tooltip": "Date de création de la société que votre conjoint gére ou dirige",
+            "tooltip": "Date de création de la société que votre conjoint gére ou dirige.",
             "coClient": true
         },
   {
       "name": "CEtape2_Client_LiquidationOuProcedure",
       "label": "Liquidation judicaire",
-      "group": "Situation professionnelle",
+      "group": "II. Situation professionnelle",
       "type": "yesno",
       "subtype": "input",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -440,13 +441,13 @@
       ],
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Une des sociétés de votre conjoint est en liquidation ou en procédure collective",
+      "tooltip": "Une des sociétés de votre conjoint est en liquidation ou en procédure collective.",
       "coClient": true
   },
         {
             "name": "CFormulaire_E_DebutContratTravailDate3",
             "label": "Date de retraite du conjoint",
-            "group": "Situation professionnelle",
+            "group": "II. Situation professionnelle",
             "value": "",
             "type": "month",
             "subtype": "input",
@@ -468,7 +469,7 @@
         }, {
             "name": "Etape3_Client_Revenus_Salaire",
             "label": "Salaire",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "hidden": true,
@@ -482,14 +483,14 @@
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "Votre salaire ne peut être inferieur à 1€",
+            "minvalueMessage": "Votre salaire ne peut être inférieur à 1€",
             "maxvalueMessage": "Votre salaire ne peut être supérieur à 1000000€",
             "nextField": true,
-            "tooltip": "Votre salaire mensuel net"
+            "tooltip": "Votre salaire mensuel net."
         }, {
             "name": "Etape3_Client_Revenus_Salaire_Retraite",
             "label": "Retraite",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "hidden": true,
@@ -503,14 +504,14 @@
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "Votre retraite ne peut être inferieure à 1€",
+            "minvalueMessage": "Votre retraite ne peut être inférieure à 1€",
             "maxvalueMessage": "Votre retraite ne peut être supérieure à 1000000€",
             "nextField": true,
-            "tooltip": "Votre retraite mensuelle nette"
+            "tooltip": "Votre retraite mensuelle nette."
         }, {
             "name": "CEtape3_Client_Revenus_Salaire",
             "label": "Salaire du conjoint",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "hidden": true,
@@ -524,15 +525,15 @@
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "Le salaire de votre conjoint ne peut être inferieur à 1€",
+            "minvalueMessage": "Le salaire de votre conjoint ne peut être inférieur à 1€",
             "maxvalueMessage": "La salaire de votre conjoint ne peut être supérieur à 1000000€",
-            "tooltip": "Le salaire mensuel net de votre conjoint",
+            "tooltip": "Le salaire mensuel net de votre conjoint.",
             "nextField": true,
             "coClient": true
         }, {
             "name": "CEtape3_Client_Revenus_Salaire_Retraite",
             "label": "Retraire du conjoint",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "hidden": true,
@@ -546,86 +547,86 @@
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "La retraite de votre conjoint ne peut être inferieure à 1€",
+            "minvalueMessage": "La retraite de votre conjoint ne peut être inférieure à 1€",
             "maxvalueMessage": "La retraite de votre conjoint ne peut être supérieure à 1000000€",
-            "tooltip": "La retraite mensuelle nette de votre conjoint",
+            "tooltip": "La retraite mensuelle nette de votre conjoint.",
             "nextField": true,
             "coClient": true
         }, {
             "name": "Etape3_Client_Revenus_AllocationOuAideLogement",
             "label": "Aide au logement",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "minvalue": 0,
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "L'aide au logement ne peut être inferieure à 0€",
+            "minvalueMessage": "L'aide au logement ne peut être inférieure à 0€",
             "maxvalueMessage": "L'aide au logement ne peut être supérieure à 1000000€",
             "nextField": true,
-            "tooltip": "Si vous ne percevez pas d'aides au logement, merci de renseigner 0 pour passer à la question suivante"
+            "tooltip": "Si vous ne percevez pas d'aides au logement, merci de renseigner 0 pour passer à la question suivante."
         }, {
             "name": "Etape3_Client_Revenus_PrestationFamiliale",
             "label": "Prestations familiales",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "minvalue": 0,
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "La prestation ne peut être inferieure à 0€",
+            "minvalueMessage": "La prestation ne peut être inférieure à 0€",
             "maxvalueMessage": "La prestation ne peut être supérieure à 1000000€",
             "nextField": true,
-            "tooltip": "Si vous ne percevez pas de prestations familiales, merci de renseigner 0 pour passer à la question suivante"
+            "tooltip": "Si vous ne percevez pas de prestations familiales, merci de renseigner 0 pour passer à la question suivante."
         }, {
             "name": "Etape3_Client_Revenus_AutresRevenus",
             "label": "Autres revenus",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "minvalue": 0,
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "Le revenu ne peut être inferieur à 0€",
+            "minvalueMessage": "Le revenu ne peut être inférieur à 0€",
             "maxvalueMessage": "Le revenu ne peut être supérieur à 1000000€",
             "nextField": true,
-            "tooltip": "Si vous ne percevez pas d'autres revenus que ceux précédemment mentionnés, merci de renseigner 0 pour passer à la question suivante"
+            "tooltip": "Si vous ne percevez pas d'autres revenus que ceux précédemment mentionnés, merci de renseigner 0 pour passer à la question suivante."
         }, {
             "name": "Etape3_Client_Revenus_PensionPercues",
             "label": "Pension",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "minvalue": 0,
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "La pension ne peut être inferieure à 0€",
+            "minvalueMessage": "La pension ne peut être inférieure à 0€",
             "maxvalueMessage": "La pension ne peut être supérieure à 1000000€",
             "nextField": true,
-            "tooltip": "Si vous ne percevez pas de pension (réversion, invalidité), merci de renseigner 0 pour passer à la question suivante"
+            "tooltip": "Si vous ne percevez pas de pension (réversion, invalidité), merci de renseigner 0 pour passer à la question suivante."
         }, {
             "name": "Etape3_Client_Revenus_IndemnitesPercues",
             "label": "Indemnités Sécurité Sociale",
-            "group": "Vos revenus",
+            "group": "III. Vos revenus",
             "type": "money",
             "subtype": "input",
             "minvalue": 0,
             "maxvalue": 1000000,
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "parseMessage": "Merci de ne saisir que des chiffres",
-            "minvalueMessage": "L'indemnité ne peut être inferieure à 0€",
+            "minvalueMessage": "L'indemnité ne peut être inférieure à 0€",
             "maxvalueMessage": "L'indemnité ne peut être supérieure à 1000000€",
             "nextField": true,
-            "tooltip": "Si vous ne percevez pas d'indemnités de la Sécurité Sociale, merci de renseigner 0 pour passer à la question suivante"
+            "tooltip": "Si vous ne percevez pas d'indemnités de la Sécurité Sociale, merci de renseigner 0 pour passer à la question suivante."
         },
   {
       "name": "Etape3_Client_Revenus_ArretMaladieDurant3DerniersMois",
-      "label": "Arrêt Maladie",
-      "group": "Vos revenus",
+      "label": "Arrêt maladie",
+      "group": "III. Vos revenus",
       "type": "yesno",
       "subtype": "input",
       "hidden": true,
@@ -642,11 +643,11 @@
       "noValue": "false",
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Vous avez eu au moins 30 jours d'arrêt maladie au cours des 3 derniers mois"
+      "tooltip": "Vous avez eu au moins 30 jours d'arrêt maladie au cours des 3 derniers mois."
   }, {
       "name": "Etape3_Client_Charges_Loyer",
       "label": "Loyer",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
       "minvalue": 1,
@@ -661,16 +662,16 @@
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
       "nextField": true,
-      "minvalueMessage": "Le loyer ne peut être inferieur à 0€",
+      "minvalueMessage": "Le loyer ne peut être inférieur à 0€",
       "maxvalueMessage": "Le loyer ne peut être supérieur à 1000000€",
-      "tooltip": "Hors APL"
+      "tooltip": "Hors APL."
   }, {
       "name": "Etape3_Client_Charges_PretImmo",
       "label": "Prêt immobilier",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
-      "minvalue": 0,
+      "minvalue": 1,
       "maxvalue": 1000000,
       "hidden": true,
       "binds": [
@@ -681,29 +682,29 @@
       ],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "Le prêt ne peut être inferieur à 0€",
+      "minvalueMessage": "Le prêt ne peut être inférieur à 1€",
       "maxvalueMessage": "Le prêt ne peut être supérieur à 1000000€",
       "nextField": true,
-      "tooltip": "Montant remboursé chaque mois pour ce prêt"
+      "tooltip": "Montant remboursé chaque mois pour ce prêt."
   }, {
       "name": "Etape3_Client_Charges_Pension",
       "label": "Pension alimentaire versée",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
       "minvalue": 0,
       "maxvalue": 1000000,
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "La pension ne peut être inferieure à 0€",
+      "minvalueMessage": "La pension ne peut être inférieure à 0€",
       "maxvalueMessage": "La pension ne peut être supérieure à 1000000€",
       "nextField": true,
-      "tooltip": "Si vous ne versez pas de pension alimentaire chaque mois, merci de renseigner 0 pour passer à la question suivante"
+      "tooltip": "Si vous ne versez pas de pension alimentaire chaque mois, merci de renseigner 0 pour passer à la question suivante."
   },
   {
       "name": "Etape3_Client_Charges_Dettes",
       "label": "D'autres crédits en cours",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -735,14 +736,14 @@
       ],
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Vos autres crédits en cours (auto, travaux, crédit renouvelable, prêt personnel…)",
+      "tooltip": "Vos autres crédits en cours (auto, travaux, crédit renouvelable, prêt personnel…).",
       "oddValues": [0],
       "oddMessage":" L'oubli de déclaration d'un crédit conduit généralement à un refus : déclarez bien tous vos crédits, merci."
   },
   {
       "name": "Etape3_Client_Charges_Dettes[0].Id",
       "label": "Type de crédit n°1",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -759,10 +760,10 @@
   }, {
       "name": "Etape3_Client_Charges_Dettes[0].Label",
       "label": "Mensualité du crédit n°1",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
-      "minvalue": 0,
+      "minvalue": 1,
       "maxvalue": 1000000,
       "hidden": true,
       "binds": [
@@ -773,15 +774,15 @@
       ],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "La mensualité ne peut être inferieure à 0€",
+      "minvalueMessage": "La mensualité ne peut être inférieure à 1€",
       "maxvalueMessage": "La mensualité ne peut être supérieure à 1000000€",
       "nextField": true,
-      "tooltip": "Montant remboursé chaque mois pour ce prêt"
+      "tooltip": "Montant remboursé chaque mois pour ce prêt."
   },
   {
       "name": "Etape3_Client_Charges_Dettes[1].Id",
       "label": "Type de crédit n°2",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -798,10 +799,10 @@
   }, {
       "name": "Etape3_Client_Charges_Dettes[1].Label",
       "label": "Mensualité du crédit n°2",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
-      "minvalue": 0,
+      "minvalue": 1,
       "maxvalue": 1000000,
       "hidden": true,
       "binds": [
@@ -812,15 +813,15 @@
       ],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "La mensualité ne peut être inferieure à 0€",
+      "minvalueMessage": "La mensualité ne peut être inférieure à 1€",
       "maxvalueMessage": "La mensualité ne peut être supérieure à 1000000€",
       "nextField": true,
-      "tooltip": "Montant remboursé chaque mois pour ce prêt"
+      "tooltip": "Montant remboursé chaque mois pour ce prêt."
   },
   {
       "name": "Etape3_Client_Charges_Dettes[2].Id",
       "label": "Type de crédit n°3",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -837,10 +838,10 @@
   }, {
       "name": "Etape3_Client_Charges_Dettes[2].Label",
       "label": "Mensualité du crédit n°3",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
-      "minvalue": 0,
+      "minvalue": 1,
       "maxvalue": 1000000,
       "hidden": true,
       "binds": [
@@ -851,15 +852,15 @@
       ],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "La mensualité ne peut être inferieure à 0€",
+      "minvalueMessage": "La mensualité ne peut être inférieure à 1€",
       "maxvalueMessage": "La mensualité ne peut être supérieure à 1000000€",
       "nextField": true,
-      "tooltip": "Montant remboursé chaque mois pour ce prêt"
+      "tooltip": "Montant remboursé chaque mois pour ce prêt."
   },
   {
       "name": "Etape3_Client_Charges_Dettes[3].Id",
       "label": "Type de crédit n°4",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -876,10 +877,10 @@
   }, {
       "name": "Etape3_Client_Charges_Dettes[3].Label",
       "label": "Mensualité du crédit n°4",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
-      "minvalue": 0,
+      "minvalue": 1,
       "maxvalue": 1000000,
       "hidden": true,
       "binds": [
@@ -890,15 +891,15 @@
       ],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "La mensualité ne peut être inferieure à 0€",
+      "minvalueMessage": "La mensualité ne peut être inférieure à 1€",
       "maxvalueMessage": "La mensualité ne peut être supérieure à 1000000€",
       "nextField": true,
-      "tooltip": "Montant remboursé chaque mois pour ce prêt"
+      "tooltip": "Montant remboursé chaque mois pour ce prêt."
   },
   {
       "name": "Etape3_Client_Charges_Dettes[4].Id",
       "label": "Type de crédit n°5",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -915,10 +916,10 @@
   }, {
       "name": "Etape3_Client_Charges_Dettes[4].Label",
       "label": "Mensualité du crédit n°5",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "money",
       "subtype": "input",
-      "minvalue": 0,
+      "minvalue": 1,
       "maxvalue": 1000000,
       "hidden": true,
       "binds": [
@@ -929,14 +930,14 @@
       ],
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
       "parseMessage": "Merci de ne saisir que des chiffres",
-      "minvalueMessage": "La mensualité ne peut être inferieure à 0€",
+      "minvalueMessage": "La mensualité ne peut être inférieure à 1€",
       "maxvalueMessage": "La mensualité ne peut être supérieure à 1000000€",
       "nextField": true,
-      "tooltip": "Montant remboursé chaque mois pour ce prêt"
+      "tooltip": "Montant remboursé chaque mois pour ce prêt."
   }, {
       "name": "Etape3_Rachat",
       "label": "Remboursement des crédits en cours",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "yesno",
       "subtype": "input",
       "hidden": true,
@@ -953,11 +954,11 @@
       "noValue": "false",
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Vous souhaitez consacrer la majorité du prêt demandé à rembourser d'autres crédits"
+      "tooltip": "Vous souhaitez consacrer la majorité du prêt demandé à rembourser d'autres crédits."
   }, {
       "name": "Etape3_Dette",
       "label": "Retards de paiement crédits en cours",
-      "group": "Vos charges",
+      "group": "IV. Vos charges",
       "type": "yesno",
       "subtype": "input",
       "hidden": true,
@@ -974,12 +975,12 @@
       "noValue": "false",
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Vous avez actuellement des retards de paiement dans vos crédits en cours de remboursement"
+      "tooltip": "Vous avez actuellement des retards de paiement dans vos crédits en cours de remboursement."
   },
   {
       "name": "Etape3_Client_BanqueId",
       "label": "Domiciliation bancaire",
-      "group": "Votre banque",
+      "group": "V. Votre banque",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -1001,12 +1002,12 @@
       ],
       "nextField": true,
       "autoChange": true,
-      "tooltip": "Banque où vos revenus sont domiciliés"
+      "tooltip": "Banque où vos revenus sont domiciliés."
   },
         {
             "name": "Etape3_Client_Banque_Depuis",
             "label": "Année d'ouverture du compte",
-            "group": "Votre banque",
+            "group": "V. Votre banque",
             "value": "",
             "type": "year",
             "subtype": "input",
@@ -1027,7 +1028,7 @@
         }, {
             "name": "Etape3_Client_FICP_FCC",
             "label": "Statut FICP / FCC",
-            "group": "Votre banque",
+            "group": "V. Votre banque",
             "type": "yesno",
             "subtype": "input",
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -1037,12 +1038,12 @@
             "noValue": "false",
             "nextField": true,
             "autoChange": true,
-            "tooltip": "Vous êtes ou votre conjoint, inscrit au FICP (Fichier des Incidents de Crédits aux Particuliers) ou au FCC (Fichier Central des Chèques) ou avez un dossier de surendettement en cours"
+            "tooltip": "Vous êtes ou votre conjoint, inscrit au FICP (Fichier des Incidents de Crédits aux Particuliers) ou au FCC (Fichier Central des Chèques) ou avez un dossier de surendettement en cours."
         },
   {
       "name": "Etape1_Client_CiviliteId",
       "label": "Civilité",
-      "group": "Faisons connaissance",
+      "group": "VI. Faisons connaissance",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -1058,7 +1059,7 @@
         {
             "name": "Etape1_Client_Nom",
             "label": "Nom",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1068,7 +1069,7 @@
         {
             "name": "Etape1_Client_NomJeuneFille",
             "label": "Nom de jeune fille",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1077,7 +1078,7 @@
             "binds": [
               {
                   "name": "Etape1_Client_CiviliteId",
-                  "values": [3]
+                  "values": [2]
               }
             ],
             "nextField": true
@@ -1085,7 +1086,7 @@
         {
             "name": "Etape1_Client_Prenom",
             "label": "Prénom",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1095,7 +1096,7 @@
         {
             "name": "Formulaire_E_Naissance",
             "label": "Date de naissance",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "date",
             "subtype": "input",
@@ -1107,7 +1108,7 @@
         {
             "name": "Etape1_Client_NaissanceCodePostal",
             "label": "Code Postal de naissance",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "minlength": 5,
@@ -1119,7 +1120,7 @@
         {
             "name": "Etape1_Client_NaissanceVille",
             "label": "Ville de naissance",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "minlength": 5,
@@ -1131,7 +1132,7 @@
   {
       "name": "CEtape1_Client_CiviliteId",
       "label": "Civilité du conjoint",
-      "group": "Faisons connaissance",
+      "group": "VI. Faisons connaissance",
       "type": "select",
       "subtype": "select",
       "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -1143,12 +1144,12 @@
       "nextField": true,
       "autoChange": true,
       "coClient": true,
-      "tooltip": "Merci de renseigner également les informations ci-dessous concernants votre conjoint."
+      "tooltip": "Merci de renseigner également les informations ci-dessous concernant votre conjoint."
   },
         {
             "name": "CEtape1_Client_Nom",
             "label": "Nom du conjoint",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1159,7 +1160,7 @@
         {
             "name": "CEtape1_Client_NomJeuneFille",
             "label": "Nom de jeune fille du conjoint",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1168,7 +1169,7 @@
             "binds": [
               {
                   "name": "CEtape1_Client_CiviliteId",
-                  "values": [3]
+                  "values": [2]
               }
             ],
             "nextField": true,
@@ -1177,7 +1178,7 @@
         {
             "name": "CEtape1_Client_Prenom",
             "label": "Prénom du conjoint",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1188,7 +1189,7 @@
         {
             "name": "CFormulaire_E_Naissance",
             "label": "Date de naissance du conjoint",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "date",
             "subtype": "input",
@@ -1200,7 +1201,7 @@
         {
             "name": "CEtape1_Client_NaissanceCodePostal",
             "label": "Code Postal de naissance du conjoint",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "minlength": 5,
@@ -1213,7 +1214,7 @@
         {
             "name": "CEtape1_Client_NaissanceCodePostal",
             "label": "Ville de naissance du conjoint",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "minlength": 5,
@@ -1225,7 +1226,7 @@
         }, {
             "name": "Etape1_Client_Adresse_Rue",
             "label": "Adresse de résidence",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
@@ -1234,39 +1235,38 @@
         }, {
             "name": "Etape1_Client_Adresse_ComplementAdresse",
             "label": "Complément d'adresse",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "nextField": true,
-            "tooltip": "Si vous n'avez pas de complément d'adresse à nous renseigner, cliquez sur le lien ci-dessous",
+            "tooltip": "Si vous n'avez pas de complément d'adresse à nous renseigner, cliquez sur le lien ci-dessous.",
             "skip": true,
             "skipMessage": "Pas de complément d'adresse"
         }, {
             "name": "Etape1_Client_Adresse_CodePostal",
             "label": "Code postal de résidence",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
             "nextField": true,
-            "tooltip": "Code postal à 5 chiffres.<br /> Si étranger, saisir 99 000. "
+            "tooltip": "Code postal à 5 chiffres.<br /> Si étranger, saisir 99 000."
         }, {
             "name": "Etape1_Client_Adresse_Ville",
             "label": "Ville de résidence",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "text",
             "subtype": "input",
             "requireMessage": "Champ obligatoire : merci de le renseigner.",
-            "nextField": true,
-            "tooltip": "Si vous n'avez pas de complément d'adresse à nous renseigner, cliquez sur le lien ci-dessous \"Pas de complément d'adresse\""
+            "nextField": true
         }, {
             "name": "Etape1_Client_Tel_Mobile",
             "label": "N° de téléphone portable",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "phone",
             "subtype": "input",
@@ -1279,7 +1279,7 @@
         }, {
             "name": "Etape1_Client_Tel_Domicile",
             "label": "N° de téléphone fixe",
-            "group": "Faisons connaissance",
+            "group": "VI. Faisons connaissance",
             "value": "",
             "type": "phone",
             "subtype": "input",

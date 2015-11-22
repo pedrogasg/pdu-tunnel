@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeYear', ControlTypeYear);
-    function ControlTypeYear() {
+    function ControlTypeYear(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-year/control-type-year.html',
@@ -12,9 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                console.log(elm);
-                scope.field['element'] = elm;
+                elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypeYear.$inject = ['elementBindService'];
 })();

@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeYesno', ControlTypeYesNo);
-    function ControlTypeYesNo() {
+    function ControlTypeYesNo(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-yesno/control-type-yesno.html',
@@ -12,8 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
+                elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypeYesNo.$inject = ['elementBindService'];
 })();

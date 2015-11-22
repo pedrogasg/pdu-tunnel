@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeText', ControlTypeText);
-    function ControlTypeText() {
+    function ControlTypeText(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-text/control-type-text.html',
@@ -12,8 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
+                elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypeText.$inject = ['elementBindService'];
 })();

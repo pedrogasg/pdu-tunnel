@@ -28,18 +28,28 @@
                             });
                         }
                     }
-                    
+
                     elm.on("keydown", function (e) {
                         var code = e.keyCode || e.which;
                         if (!e.shiftKey && (code === 13 || code == 9)) {
                             e.preventDefault();
                             if (ctrl.$valid) {
-                                scope.tunnel.goToNextInput(scope.field);
+                                scope.tunnel.nextInput();
                             } else {
                                 ctrl.$setTouched();
                                 scope.$apply();
                             }
                             return true;
+                        }
+                        if(code == 38 && e.target.tagName != 'SELECT'){
+                          e.preventDefault();
+                            scope.tunnel.previousInput();
+                            return true;
+                        }
+                        if(code == 40 && e.target.tagName != 'SELECT'){
+                          e.preventDefault();
+                            scope.tunnel.nextInput();
+                            return true
                         }
                     });
                 }

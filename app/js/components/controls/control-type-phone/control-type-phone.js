@@ -1,7 +1,7 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypePhone', ControlTypePhone);
-    function ControlTypePhone() {
+    function ControlTypePhone(elementBindService) {
         return {
             restrict: 'A',
             templateUrl: '/app/js/components/controls/control-type-phone/control-type-phone.html',
@@ -12,8 +12,9 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-                scope.field['element'] = elm;
+                elementBindService.initElementBindings(elm,scope);
             }
         }
     }
+    ControlTypePhone.$inject = ['elementBindService'];
 })();

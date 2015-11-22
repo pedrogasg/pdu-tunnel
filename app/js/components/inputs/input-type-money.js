@@ -2,6 +2,7 @@
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('inputTypeMoney', inputTypeMoney);
     var MONEY_REGEXP = /^\d+([,.]\d{2})?€$/,
+        MONEY_EXCEPTION_REGEXP = /^\d+[,.][1-9]{2}\d+€$/,
         FLOAT_REGEXP = /^\d+[,.]\d$/,
         FLOAT_ZERO_REGEXP = /^\d+[,.]0€$/,
         START_FLOAT_REGEXP = /^\d+[,.]€$/,
@@ -17,10 +18,23 @@
                 }
                 ctrl.$parsers.push(function (value) {
                     if (ctrl.$isEmpty(value)) return null;
+                      if(value === '€'){
+                        elm.val('');
+                        return null;
+                      }
+
                     if (minVal !== undefined && minVal == 0 && value == "0" && scope.tunnel.goToNextInput) {
                         scope.tunnel.goToNextInput(scope.field);
                         elm.val('0€');
                         return 0
+                    }
+                    if(MONEY_EXCEPTION_REGEXP.test(value)){
+                        var exception = parseMoney(value).toFixed(2);
+                        elm.val(exception+'€');
+                        if(scope.tunnel.goToNextInput){
+                          scope.tunnel.goToNextInput(scope.field);
+                        }
+                        return exception;
                     }
                     var pars = MONEY_REGEXP.exec(value);
                     if (pars && pars.length) {
@@ -50,9 +64,7 @@
                             p2 = p2 + 1;
                             returnValue = val;
                         }
-                        if (val === 0) {
-                            returnValue = 0;
-                        }
+
                         elm.val(valString + '€');
                         elm[0].setSelectionRange(p1, p2);
                     }
@@ -61,7 +73,7 @@
 
 
                 if (typeof attr.minvalue !== 'undefined' || attr.minvalue) {
-                    
+
                     ctrl.$validators.minvalue = function (value) {
                         return minVal === 'undefined' || isNaN(minVal) || Number(value) >= Number(minVal);
                     };
