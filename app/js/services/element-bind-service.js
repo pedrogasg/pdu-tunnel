@@ -14,6 +14,7 @@
       }
       function bindElementToScope(element,scope){
         var input;
+        scope.field['element'] = element;
         scope.field.getInput = function(){
           if(!input){
             input = element.find(scope.field.subtype)[0];

@@ -10,23 +10,14 @@
             transclude: true,
             compile: function compile(tElement, tAttrs, transclude) {
                 var fields = FieldsService.getFields(),
-                    form = tElement.find('form'),
-                    div, oldDiv = form.find('div'),
                     first;
                 for (var key in fields) {
                     var field = fields[key];
-
-                    div = angular.element(['<div control-type-', field.type, ' parent-key="tunnel.fields[\'', key, '\'].name" parent-tunnel="tunnel" field="tunnel.fields[\'', key, '\']"></div>'].join(''));
                     if(!first){
                       first = field;
+                      break;
                     }
-                    field['element'] = div;
-                    if (oldDiv) {
-                        oldDiv.after(div);
-                    } else {
-                        form.prepend(div);
-                    }
-                    oldDiv = div;
+
                 }
                 return {
                     pre: function preLink(scope, iElement, iAttrs, controller) {

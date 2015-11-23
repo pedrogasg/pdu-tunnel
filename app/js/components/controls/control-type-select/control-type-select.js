@@ -13,14 +13,6 @@
             transclude: true,
             link: function (scope, elm, attr) {
               elementBindService.initElementBindings(elm,scope);
-              scope.autoOpen = function(){
-                console.log('here');
-                var event;
-                event = document.createEvent('MouseEvents');
-                event.initMouseEvent('mousedown', true, true, window);
-                console.log(elm.find('select')[0]);
-                elm.find('select')[0].dispatchEvent(event);
-              }
             }
         }
     }

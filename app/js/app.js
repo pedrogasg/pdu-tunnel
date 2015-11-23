@@ -7,7 +7,7 @@
   'ngAria',
   'ngSanitize'
     ]);
-    TunnelPhantom.config('TunnelTemplateProvider', [function (TunnelTemplateProvider) {
-
+    TunnelPhantom.config( ['$httpProvider',function ($httpProvider) {
+        $httpProvider.interceptors.push('tunnelTemplateBuffer');
     }]);
 })();
