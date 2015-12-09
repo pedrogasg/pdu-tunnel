@@ -4,7 +4,7 @@
     function ControlTypeMoney(elementBindService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/controls/control-type-money/control-type-money.html',
+            templateUrl: '/js/components/controls/control-type-money/control-type-money.html',
             scope: {
                 'tunnel': '=parentTunnel',
                 'field': '=field',

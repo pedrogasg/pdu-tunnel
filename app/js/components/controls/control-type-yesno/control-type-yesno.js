@@ -4,7 +4,7 @@
     function ControlTypeYesNo(elementBindService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/controls/control-type-yesno/control-type-yesno.html',
+            templateUrl: '/js/components/controls/control-type-yesno/control-type-yesno.html',
             scope: {
                 'tunnel': '=parentTunnel',
                 'field': '=field',

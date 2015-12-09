@@ -1,10 +1,10 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('controlTypeSelect', ControlTypeSelect);
-    function ControlTypeSelect(elementBindService) {
+    function ControlTypeSelect(elementBindService, ResourceService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/controls/control-type-select/control-type-select.html',
+            templateUrl: '/js/components/controls/control-type-select/control-type-select.html',
             scope: {
                 'tunnel': '=parentTunnel',
                 'field': '=field',
@@ -12,10 +12,27 @@
             },
             transclude: true,
             link: function (scope, elm, attr) {
-              elementBindService.initElementBindings(elm,scope);
+                elementBindService.initElementBindings(elm, scope);
+                function updateValues(key) {
+                    ResourceService.
+                        getValues(key).
+                        then(function (values) {
+                            field.values = values;
+                        });
+                }
+                //var field = scope.field;
+                //if (field.keyForValues) {
+                //    updateValues(field.keyForValues);   
+                //}
+                //if (field.keyForValuesRoot) {
+                //    field.resourceHooks.push(function (f) {
+                //        updateValues(f.keyForValues);
+                //    });
+                //}
+                
             }
         }
     }
 
-    ControlTypeSelect.$inject = ['elementBindService'];
+    ControlTypeSelect.$inject = ['elementBindService','ResourceService'];
 })();

@@ -1,28 +1,18 @@
 ﻿(function () {
     var TunnelPhantom = angular.module('TunnelPhantom');
     TunnelPhantom.directive('tunnel', Tunnel);
-    function Tunnel(FieldsService) {
+    function Tunnel(FieldsService, TunnelFieldsService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/tunnel/tunnel.html',
+            templateUrl: '/js/components/tunnel/tunnel.html',
             controller: TunnelController,
             controllerAs: 'tunnel',
             transclude: true,
             compile: function compile(tElement, tAttrs, transclude) {
-                var fields = FieldsService.getFields(),
-                    first;
-                for (var key in fields) {
-                    var field = fields[key];
-                    if(!first){
-                      first = field;
-                      break;
-                    }
-
-                }
                 return {
                     pre: function preLink(scope, iElement, iAttrs, controller) {
-                        controller.fields = fields;
-                        controller.first = first;
+                        controller.fields = TunnelFieldsService.getObjectFields();
+                        controller.first = TunnelFieldsService.getFirstObject();
                     },
                     post: function (scope, iElem, iAttrs, controller) {
 
@@ -31,7 +21,7 @@
             }
         };
     }
-    function TunnelController($scope, $timeout) {
+    function TunnelController($scope, $timeout, $rootScope) {
         var tunnel = this,
             _currentField = null,
             _moveCount = 0,
@@ -76,15 +66,20 @@
           }
 
         };
-        tunnel.setOpacity = function(field){
-          var currentControl = field.element[0].querySelector('.control');
-          var controls = tunnel.element.querySelectorAll('.control');
-          var index = Array.prototype.indexOf.call(controls,currentControl);
+        tunnel.setOpacity = function (field) {
+
+            var currentControl = field.element[0].querySelector('.control'),
+                controls = tunnel.element.querySelectorAll('.control'),
+              index = Array.prototype.indexOf.call(controls, currentControl),
+            cl = controls.length;
+
           currentControl.style.opacity = '1';
           if(index > 0){
             controls[index - 1].style.opacity = '0.8';
           }
-          var length = Math.min(5,controls.length-index);
+
+          $scope.$broadcast('updateProcess', index/cl*100);
+          var length = Math.min(5,cl-index);
           for(var i = 1,j = 8;i < length;i++,j-=2){
             controls[index + i].style.opacity = '0.'+j;
           }
@@ -113,6 +108,13 @@
         tunnel.goToNextInput = function (field, reverse) {
             if (field.hasCoClient) {
                 tunnel.coClient = Boolean(~field.hasCoClient.indexOf(field.value)) ;
+            }
+            if (field.broadCastValue) {
+                var broadCastField = tunnel.fields[field.broadCastValue];
+                if (broadCastField && broadCastField.changeValuesKey) {
+                    console.log(broadCastField);
+                    broadCastField.changeValuesKey(field.value);
+                }
             }
             if(!reverse && !field.next){
               tunnel.submitInput.focus();
@@ -168,6 +170,6 @@
         }
         $timeout(tunnel.init, 200);
     }
-    Tunnel.$inject = ['FieldsService'];
-    TunnelController.$inject = ['$scope', '$timeout'];
+    Tunnel.$inject = ['FieldsService', 'TunnelFieldsService'];
+    TunnelController.$inject = ['$scope', '$timeout', '$rootScope'];
 })();

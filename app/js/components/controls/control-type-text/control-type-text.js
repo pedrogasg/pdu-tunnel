@@ -4,7 +4,7 @@
     function ControlTypeText(elementBindService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/controls/control-type-text/control-type-text.html',
+            templateUrl: '/js/components/controls/control-type-text/control-type-text.html',
             scope: {
                 'tunnel': '=parentTunnel',
                 'field': '=field',

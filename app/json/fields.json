@@ -143,9 +143,61 @@
     "type": "select",
     "subtype": "select",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "values": [{ "id": 1, "label": "Locataire", "DateDebut": true }, { "id": 2, "label": "Propriétaire (avec crédit immobilier en cours)", "DateDebut": true }, { "id": 3, "label": "Propriétaire (sans crédit immobilier en cours)", "DateDebut": true }, { "id": 4, "label": "Logé par l'employeur", "DateDebut": true }, { "id": 5, "label": "Logé par l'administration", "DateDebut": true }, { "id": 6, "label": "Logé par parents ou enfants", "DateDebut": true }, { "id": 9, "label": "Logé par conjoint", "DateDebut": true }, { "id": 10, "label": "Logé par un autre membre de la famille", "DateDebut": true }, { "id": 7, "label": "Logé par un ami ou en sous-location", "DateDebut": true }, { "id": 8, "label": "Sans domicile fixe (Hôtel...)", "DateDebut": false }],
+    "values": [
+      {
+        "id": 1,
+        "label": "Locataire",
+        "DateDebut": true
+      },
+      {
+        "id": 2,
+        "label": "Propriétaire (avec crédit immobilier en cours)",
+        "DateDebut": true
+      },
+      {
+        "id": 3,
+        "label": "Propriétaire (sans crédit immobilier en cours)",
+        "DateDebut": true
+      },
+      {
+        "id": 4,
+        "label": "Logé par l'employeur",
+        "DateDebut": true
+      },
+      {
+        "id": 5,
+        "label": "Logé par l'administration",
+        "DateDebut": true
+      },
+      {
+        "id": 6,
+        "label": "Logé par parents ou enfants",
+        "DateDebut": true
+      },
+      {
+        "id": 9,
+        "label": "Logé par conjoint",
+        "DateDebut": true
+      },
+      {
+        "id": 10,
+        "label": "Logé par un autre membre de la famille",
+        "DateDebut": true
+      },
+      {
+        "id": 7,
+        "label": "Logé par un ami ou en sous-location",
+        "DateDebut": true
+      },
+      {
+        "id": 8,
+        "label": "Sans domicile fixe (Hôtel...)",
+        "DateDebut": false
+      }
+    ],
     "nextField": true,
-    "autoChange": true
+    "autoChange": true,
+    "keyForValues": "situationsLogement"
   },
   {
     "name": "Etape2_Client_Residence_Date",
@@ -153,13 +205,14 @@
     "group": "I. Situation personnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -173,7 +226,7 @@
   {
     "autoChange": true,
     "filters": {
-      "Etape2_Client_Activite_ProfessionId": "IdSecteur"
+      "Etape2_Client_Activite_ProfessionId": "filtre"
     },
     "group": "II. Situation professionnelle",
     "label": "Secteur d'activité",
@@ -183,6 +236,7 @@
     "subtype": "select",
     "type": "select",
     "value": "",
+    "keyForValues": "secteurs",
     "values": [
       {
         "id": 1,
@@ -215,7 +269,275 @@
     "label": "Profession",
     "group": "II. Situation professionnelle",
     "value": "",
-    "values": [{ "id": 1, "IdSecteur": 1, "label": "Cadre supérieur", "ContratTravail": true, "DateDebut": true }, { "id": 2, "IdSecteur": 1, "label": "Ingénieur", "ContratTravail": true, "DateDebut": true }, { "id": 3, "IdSecteur": 1, "label": "Cadre moyen", "ContratTravail": true, "DateDebut": true }, { "id": 4, "IdSecteur": 1, "label": "Technicien", "ContratTravail": true, "DateDebut": true }, { "id": 5, "IdSecteur": 1, "label": "Contremaître - Agent de maîtrise", "ContratTravail": true, "DateDebut": true }, { "id": 6, "IdSecteur": 1, "label": "Agent de sécurité", "ContratTravail": true, "DateDebut": true }, { "id": 7, "IdSecteur": 1, "label": "Employé de commerce", "ContratTravail": true, "DateDebut": true }, { "id": 8, "IdSecteur": 1, "label": "Assistante maternelle - Employée de maison", "ContratTravail": true, "DateDebut": true }, { "id": 9, "IdSecteur": 1, "label": "Employé de bureau", "ContratTravail": true, "DateDebut": true }, { "id": 10, "IdSecteur": 1, "label": "Vendeur - Caissier de magasin", "ContratTravail": true, "DateDebut": true }, { "id": 11, "IdSecteur": 1, "label": "Ouvrier", "ContratTravail": true, "DateDebut": true }, { "id": 12, "IdSecteur": 1, "label": "Représentant salarié", "ContratTravail": true, "DateDebut": true }, { "id": 13, "IdSecteur": 1, "label": "Chauffeur et livreur", "ContratTravail": true, "DateDebut": true }, { "id": 14, "IdSecteur": 2, "label": "Cadre supérieur et professeur", "ContratTravail": true, "DateDebut": true }, { "id": 15, "IdSecteur": 2, "label": "Cadre moyen et instituteur", "ContratTravail": true, "DateDebut": true }, { "id": 16, "IdSecteur": 2, "label": "Infirmière et profession para-médicale", "ContratTravail": true, "DateDebut": true }, { "id": 17, "IdSecteur": 2, "label": "Employé et agent administratif", "ContratTravail": true, "DateDebut": true }, { "id": 18, "IdSecteur": 2, "label": "Agent de service", "ContratTravail": true, "DateDebut": true }, { "id": 19, "IdSecteur": 2, "label": "Ouvrier d'état", "ContratTravail": true, "DateDebut": true }, { "id": 20, "IdSecteur": 2, "label": "Militaire - Gendarme - Policier - Pompier", "ContratTravail": true, "DateDebut": true }, { "id": 21, "IdSecteur": 2, "label": "Aide soignant hospitalier", "ContratTravail": true, "DateDebut": true }, { "id": 22, "IdSecteur": 3, "label": "Propriétaire agricole", "ContratTravail": false, "DateDebut": true }, { "id": 23, "IdSecteur": 3, "label": "Salarié agricole", "ContratTravail": true, "DateDebut": true }, { "id": 24, "IdSecteur": 11, "label": "Commerçant", "ContratTravail": false, "DateDebut": true }, { "id": 25, "IdSecteur": 11, "label": "Artisan", "ContratTravail": false, "DateDebut": true }, { "id": 26, "IdSecteur": 11, "label": "Profession libérale", "ContratTravail": false, "DateDebut": true }, { "id": 27, "IdSecteur": 11, "label": "VRP sans fixe", "ContratTravail": false, "DateDebut": true }, { "id": 28, "IdSecteur": 11, "label": "Infirmière et cadre moyen du secteur médical", "ContratTravail": false, "DateDebut": true }, { "id": 29, "IdSecteur": 11, "label": "Profession libérale médicale et para-médicale", "ContratTravail": false, "DateDebut": true }, { "id": 30, "IdSecteur": 10, "label": "Etudiant", "ContratTravail": false, "DateDebut": false }, { "id": 31, "IdSecteur": 6, "label": "Retraité du secteur privé", "ContratTravail": false, "DateDebut": true }, { "id": 32, "IdSecteur": 6, "label": "Retraité du secteur public", "ContratTravail": false, "DateDebut": true }, { "id": 33, "IdSecteur": 10, "label": "Demandeur d'emploi", "ContratTravail": false, "DateDebut": false }, { "id": 34, "IdSecteur": 10, "label": "Pensionné", "ContratTravail": false, "DateDebut": false }, { "id": 35, "IdSecteur": 10, "label": "Sans profession - Sans emploi", "ContratTravail": false, "DateDebut": false }, { "id": 36, "IdSecteur": 11, "label": "Intermittent / Professionnel du spectacle", "ContratTravail": false, "DateDebut": false }, { "id": 37, "IdSecteur": 11, "label": "Autoentrepreneur", "ContratTravail": false, "DateDebut": true }, { "id": 38, "IdSecteur": 11, "label": "Chef d'entreprise de 5 salariés ou +", "ContratTravail": false, "DateDebut": true }],
+    "keyForValues": "professions",
+    "values": [
+      {
+        "id": 1,
+        "filtre": 1,
+        "label": "Cadre supérieur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 2,
+        "filtre": 1,
+        "label": "Ingénieur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 3,
+        "filtre": 1,
+        "label": "Cadre moyen",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 4,
+        "filtre": 1,
+        "label": "Technicien",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 5,
+        "filtre": 1,
+        "label": "Contremaître - Agent de maîtrise",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 6,
+        "filtre": 1,
+        "label": "Agent de sécurité",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 7,
+        "filtre": 1,
+        "label": "Employé de commerce",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 8,
+        "filtre": 1,
+        "label": "Assistante maternelle - Employée de maison",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 9,
+        "filtre": 1,
+        "label": "Employé de bureau",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 10,
+        "filtre": 1,
+        "label": "Vendeur - Caissier de magasin",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 11,
+        "filtre": 1,
+        "label": "Ouvrier",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 12,
+        "filtre": 1,
+        "label": "Représentant salarié",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 13,
+        "filtre": 1,
+        "label": "Chauffeur et livreur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 14,
+        "filtre": 2,
+        "label": "Cadre supérieur et professeur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 15,
+        "filtre": 2,
+        "label": "Cadre moyen et instituteur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 16,
+        "filtre": 2,
+        "label": "Infirmière et profession para-médicale",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 17,
+        "filtre": 2,
+        "label": "Employé et agent administratif",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 18,
+        "filtre": 2,
+        "label": "Agent de service",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 19,
+        "filtre": 2,
+        "label": "Ouvrier d'état",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 20,
+        "filtre": 2,
+        "label": "Militaire - Gendarme - Policier - Pompier",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 21,
+        "filtre": 2,
+        "label": "Aide soignant hospitalier",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 22,
+        "filtre": 3,
+        "label": "Propriétaire agricole",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 23,
+        "filtre": 3,
+        "label": "Salarié agricole",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 24,
+        "filtre": 11,
+        "label": "Commerçant",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 25,
+        "filtre": 11,
+        "label": "Artisan",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 26,
+        "filtre": 11,
+        "label": "Profession libérale",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 27,
+        "filtre": 11,
+        "label": "VRP sans fixe",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 28,
+        "filtre": 11,
+        "label": "Infirmière et cadre moyen du secteur médical",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 29,
+        "filtre": 11,
+        "label": "Profession libérale médicale et para-médicale",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 30,
+        "filtre": 10,
+        "label": "Etudiant",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 31,
+        "filtre": 6,
+        "label": "Retraité du secteur privé",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 32,
+        "filtre": 6,
+        "label": "Retraité du secteur public",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 33,
+        "filtre": 10,
+        "label": "Demandeur d'emploi",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 34,
+        "filtre": 10,
+        "label": "Pensionné",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 35,
+        "filtre": 10,
+        "label": "Sans profession - Sans emploi",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 36,
+        "filtre": 11,
+        "label": "Intermittent / Professionnel du spectacle",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 37,
+        "filtre": 11,
+        "label": "Autoentrepreneur",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 38,
+        "filtre": 11,
+        "label": "Chef d'entreprise de 5 salariés ou +",
+        "ContratTravail": false,
+        "DateDebut": true
+      }
+    ],
     "type": "select",
     "subtype": "select",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -236,7 +558,72 @@
     "label": "Contrat de travail",
     "group": "II. Situation professionnelle",
     "value": "",
-    "values": [{ "id": 1, "label": "CDI", "DateDebut": true, "DateFin": false, "Ordre": 0 }, { "id": 3, "label": "CDD", "DateDebut": true, "DateFin": true, "Ordre": 1 }, { "id": 4, "label": "Intérimaire", "DateDebut": true, "DateFin": false, "Ordre": 2 }, { "id": 2, "label": "Contrat initiative emploi à durée indéterminée", "DateDebut": true, "DateFin": false, "Ordre": 3 }, { "id": 8, "label": "Contrat initiative emploi à durée déterminée", "DateDebut": true, "DateFin": false, "Ordre": 4 }, { "id": 5, "label": "Contrat emploi jeune", "DateDebut": true, "DateFin": false, "Ordre": 5 }, { "id": 6, "label": "Contrat d'accompagnement dans l'emploi", "DateDebut": true, "DateFin": false, "Ordre": 6 }, { "id": 7, "label": "CNE", "DateDebut": true, "DateFin": false, "Ordre": 7 }, { "id": 9, "label": "Contrat jeune en entreprise", "DateDebut": true, "DateFin": false, "Ordre": 8 }],
+    "keyForValues": "typesContrats",
+    "values": [
+      {
+        "id": 1,
+        "label": "CDI",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 0
+      },
+      {
+        "id": 3,
+        "label": "CDD",
+        "DateDebut": true,
+        "DateFin": true,
+        "Ordre": 1
+      },
+      {
+        "id": 4,
+        "label": "Intérimaire",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 2
+      },
+      {
+        "id": 2,
+        "label": "Contrat initiative emploi à durée indéterminée",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 3
+      },
+      {
+        "id": 8,
+        "label": "Contrat initiative emploi à durée déterminée",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 4
+      },
+      {
+        "id": 5,
+        "label": "Contrat emploi jeune",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 5
+      },
+      {
+        "id": 6,
+        "label": "Contrat d'accompagnement dans l'emploi",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 6
+      },
+      {
+        "id": 7,
+        "label": "CNE",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 7
+      },
+      {
+        "id": 9,
+        "label": "Contrat jeune en entreprise",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 8
+      }
+    ],
     "type": "select",
     "subtype": "select",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -256,13 +643,14 @@
     "group": "II. Situation professionnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -280,13 +668,14 @@
     "group": "II. Situation professionnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -326,13 +715,14 @@
     "group": "II. Situation professionnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -347,7 +737,7 @@
     "autoChange": true,
     "coClient": true,
     "filters": {
-      "CEtape2_Client_Activite_ProfessionId": "IdSecteur"
+      "CEtape2_Client_Activite_ProfessionId": "filtre"
     },
     "group": "II. Situation professionnelle",
     "label": "Secteur d'activité du conjoint",
@@ -357,6 +747,7 @@
     "subtype": "select",
     "type": "select",
     "value": "",
+    "keyForValues": "secteurs",
     "values": [
       {
         "id": 1,
@@ -389,7 +780,275 @@
     "label": "Profession du conjoint",
     "group": "II. Situation professionnelle",
     "value": "",
-    "values": [{ "id": 1, "IdSecteur": 1, "label": "Cadre supérieur", "ContratTravail": true, "DateDebut": true }, { "id": 2, "IdSecteur": 1, "label": "Ingénieur", "ContratTravail": true, "DateDebut": true }, { "id": 3, "IdSecteur": 1, "label": "Cadre moyen", "ContratTravail": true, "DateDebut": true }, { "id": 4, "IdSecteur": 1, "label": "Technicien", "ContratTravail": true, "DateDebut": true }, { "id": 5, "IdSecteur": 1, "label": "Contremaître - Agent de maîtrise", "ContratTravail": true, "DateDebut": true }, { "id": 6, "IdSecteur": 1, "label": "Agent de sécurité", "ContratTravail": true, "DateDebut": true }, { "id": 7, "IdSecteur": 1, "label": "Employé de commerce", "ContratTravail": true, "DateDebut": true }, { "id": 8, "IdSecteur": 1, "label": "Assistante maternelle - Employée de maison", "ContratTravail": true, "DateDebut": true }, { "id": 9, "IdSecteur": 1, "label": "Employé de bureau", "ContratTravail": true, "DateDebut": true }, { "id": 10, "IdSecteur": 1, "label": "Vendeur - Caissier de magasin", "ContratTravail": true, "DateDebut": true }, { "id": 11, "IdSecteur": 1, "label": "Ouvrier", "ContratTravail": true, "DateDebut": true }, { "id": 12, "IdSecteur": 1, "label": "Représentant salarié", "ContratTravail": true, "DateDebut": true }, { "id": 13, "IdSecteur": 1, "label": "Chauffeur et livreur", "ContratTravail": true, "DateDebut": true }, { "id": 14, "IdSecteur": 2, "label": "Cadre supérieur et professeur", "ContratTravail": true, "DateDebut": true }, { "id": 15, "IdSecteur": 2, "label": "Cadre moyen et instituteur", "ContratTravail": true, "DateDebut": true }, { "id": 16, "IdSecteur": 2, "label": "Infirmière et profession para-médicale", "ContratTravail": true, "DateDebut": true }, { "id": 17, "IdSecteur": 2, "label": "Employé et agent administratif", "ContratTravail": true, "DateDebut": true }, { "id": 18, "IdSecteur": 2, "label": "Agent de service", "ContratTravail": true, "DateDebut": true }, { "id": 19, "IdSecteur": 2, "label": "Ouvrier d'état", "ContratTravail": true, "DateDebut": true }, { "id": 20, "IdSecteur": 2, "label": "Militaire - Gendarme - Policier - Pompier", "ContratTravail": true, "DateDebut": true }, { "id": 21, "IdSecteur": 2, "label": "Aide soignant hospitalier", "ContratTravail": true, "DateDebut": true }, { "id": 22, "IdSecteur": 3, "label": "Propriétaire agricole", "ContratTravail": false, "DateDebut": true }, { "id": 23, "IdSecteur": 3, "label": "Salarié agricole", "ContratTravail": true, "DateDebut": true }, { "id": 24, "IdSecteur": 11, "label": "Commerçant", "ContratTravail": false, "DateDebut": true }, { "id": 25, "IdSecteur": 11, "label": "Artisan", "ContratTravail": false, "DateDebut": true }, { "id": 26, "IdSecteur": 11, "label": "Profession libérale", "ContratTravail": false, "DateDebut": true }, { "id": 27, "IdSecteur": 11, "label": "VRP sans fixe", "ContratTravail": false, "DateDebut": true }, { "id": 28, "IdSecteur": 11, "label": "Infirmière et cadre moyen du secteur médical", "ContratTravail": false, "DateDebut": true }, { "id": 29, "IdSecteur": 11, "label": "Profession libérale médicale et para-médicale", "ContratTravail": false, "DateDebut": true }, { "id": 30, "IdSecteur": 10, "label": "Etudiant", "ContratTravail": false, "DateDebut": false }, { "id": 31, "IdSecteur": 6, "label": "Retraité du secteur privé", "ContratTravail": false, "DateDebut": true }, { "id": 32, "IdSecteur": 6, "label": "Retraité du secteur public", "ContratTravail": false, "DateDebut": true }, { "id": 33, "IdSecteur": 10, "label": "Demandeur d'emploi", "ContratTravail": false, "DateDebut": false }, { "id": 34, "IdSecteur": 10, "label": "Pensionné", "ContratTravail": false, "DateDebut": false }, { "id": 35, "IdSecteur": 10, "label": "Sans profession - Sans emploi", "ContratTravail": false, "DateDebut": false }, { "id": 36, "IdSecteur": 11, "label": "Intermittent / Professionnel du spectacle", "ContratTravail": false, "DateDebut": false }, { "id": 37, "IdSecteur": 11, "label": "Autoentrepreneur", "ContratTravail": false, "DateDebut": true }, { "id": 38, "IdSecteur": 11, "label": "Chef d'entreprise de 5 salariés ou +", "ContratTravail": false, "DateDebut": true }],
+    "keyForValues": "professions",
+    "values": [
+      {
+        "id": 1,
+        "filtre": 1,
+        "label": "Cadre supérieur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 2,
+        "filtre": 1,
+        "label": "Ingénieur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 3,
+        "filtre": 1,
+        "label": "Cadre moyen",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 4,
+        "filtre": 1,
+        "label": "Technicien",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 5,
+        "filtre": 1,
+        "label": "Contremaître - Agent de maîtrise",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 6,
+        "filtre": 1,
+        "label": "Agent de sécurité",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 7,
+        "filtre": 1,
+        "label": "Employé de commerce",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 8,
+        "filtre": 1,
+        "label": "Assistante maternelle - Employée de maison",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 9,
+        "filtre": 1,
+        "label": "Employé de bureau",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 10,
+        "filtre": 1,
+        "label": "Vendeur - Caissier de magasin",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 11,
+        "filtre": 1,
+        "label": "Ouvrier",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 12,
+        "filtre": 1,
+        "label": "Représentant salarié",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 13,
+        "filtre": 1,
+        "label": "Chauffeur et livreur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 14,
+        "filtre": 2,
+        "label": "Cadre supérieur et professeur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 15,
+        "filtre": 2,
+        "label": "Cadre moyen et instituteur",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 16,
+        "filtre": 2,
+        "label": "Infirmière et profession para-médicale",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 17,
+        "filtre": 2,
+        "label": "Employé et agent administratif",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 18,
+        "filtre": 2,
+        "label": "Agent de service",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 19,
+        "filtre": 2,
+        "label": "Ouvrier d'état",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 20,
+        "filtre": 2,
+        "label": "Militaire - Gendarme - Policier - Pompier",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 21,
+        "filtre": 2,
+        "label": "Aide soignant hospitalier",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 22,
+        "filtre": 3,
+        "label": "Propriétaire agricole",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 23,
+        "filtre": 3,
+        "label": "Salarié agricole",
+        "ContratTravail": true,
+        "DateDebut": true
+      },
+      {
+        "id": 24,
+        "filtre": 11,
+        "label": "Commerçant",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 25,
+        "filtre": 11,
+        "label": "Artisan",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 26,
+        "filtre": 11,
+        "label": "Profession libérale",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 27,
+        "filtre": 11,
+        "label": "VRP sans fixe",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 28,
+        "filtre": 11,
+        "label": "Infirmière et cadre moyen du secteur médical",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 29,
+        "filtre": 11,
+        "label": "Profession libérale médicale et para-médicale",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 30,
+        "filtre": 10,
+        "label": "Etudiant",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 31,
+        "filtre": 6,
+        "label": "Retraité du secteur privé",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 32,
+        "filtre": 6,
+        "label": "Retraité du secteur public",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 33,
+        "filtre": 10,
+        "label": "Demandeur d'emploi",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 34,
+        "filtre": 10,
+        "label": "Pensionné",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 35,
+        "filtre": 10,
+        "label": "Sans profession - Sans emploi",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 36,
+        "filtre": 11,
+        "label": "Intermittent / Professionnel du spectacle",
+        "ContratTravail": false,
+        "DateDebut": false
+      },
+      {
+        "id": 37,
+        "filtre": 11,
+        "label": "Autoentrepreneur",
+        "ContratTravail": false,
+        "DateDebut": true
+      },
+      {
+        "id": 38,
+        "filtre": 11,
+        "label": "Chef d'entreprise de 5 salariés ou +",
+        "ContratTravail": false,
+        "DateDebut": true
+      }
+    ],
     "type": "select",
     "subtype": "select",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -411,7 +1070,72 @@
     "label": "Contrat de travail du conjoint",
     "group": "II. Situation professionnelle",
     "value": "",
-    "values": [{ "id": 1, "label": "CDI", "DateDebut": true, "DateFin": false, "Ordre": 0 }, { "id": 3, "label": "CDD", "DateDebut": true, "DateFin": true, "Ordre": 1 }, { "id": 4, "label": "Intérimaire", "DateDebut": true, "DateFin": false, "Ordre": 2 }, { "id": 2, "label": "Contrat initiative emploi à durée indéterminée", "DateDebut": true, "DateFin": false, "Ordre": 3 }, { "id": 8, "label": "Contrat initiative emploi à durée déterminée", "DateDebut": true, "DateFin": false, "Ordre": 4 }, { "id": 5, "label": "Contrat emploi jeune", "DateDebut": true, "DateFin": false, "Ordre": 5 }, { "id": 6, "label": "Contrat d'accompagnement dans l'emploi", "DateDebut": true, "DateFin": false, "Ordre": 6 }, { "id": 7, "label": "CNE", "DateDebut": true, "DateFin": false, "Ordre": 7 }, { "id": 9, "label": "Contrat jeune en entreprise", "DateDebut": true, "DateFin": false, "Ordre": 8 }],
+    "keyForValues": "typesContrats",
+    "values": [
+      {
+        "id": 1,
+        "label": "CDI",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 0
+      },
+      {
+        "id": 3,
+        "label": "CDD",
+        "DateDebut": true,
+        "DateFin": true,
+        "Ordre": 1
+      },
+      {
+        "id": 4,
+        "label": "Intérimaire",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 2
+      },
+      {
+        "id": 2,
+        "label": "Contrat initiative emploi à durée indéterminée",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 3
+      },
+      {
+        "id": 8,
+        "label": "Contrat initiative emploi à durée déterminée",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 4
+      },
+      {
+        "id": 5,
+        "label": "Contrat emploi jeune",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 5
+      },
+      {
+        "id": 6,
+        "label": "Contrat d'accompagnement dans l'emploi",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 6
+      },
+      {
+        "id": 7,
+        "label": "CNE",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 7
+      },
+      {
+        "id": 9,
+        "label": "Contrat jeune en entreprise",
+        "DateDebut": true,
+        "DateFin": false,
+        "Ordre": 8
+      }
+    ],
     "type": "select",
     "subtype": "select",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
@@ -432,13 +1156,14 @@
     "group": "II. Situation professionnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -457,13 +1182,14 @@
     "group": "II. Situation professionnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -505,13 +1231,14 @@
     "group": "II. Situation professionnelle",
     "value": "",
     "type": "month",
+    "placeholder": "MM/AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "parseMessage": "Merci de respecter le format : MM/AAAA",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "hidden": true,
     "binds": [
       {
@@ -528,6 +1255,7 @@
     "label": "Salaire",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "hidden": true,
     "binds": [
@@ -550,6 +1278,7 @@
     "label": "Retraite",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "hidden": true,
     "binds": [
@@ -572,6 +1301,7 @@
     "label": "Salaire du conjoint",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "hidden": true,
     "binds": [
@@ -595,6 +1325,7 @@
     "label": "Retraire du conjoint",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "hidden": true,
     "binds": [
@@ -618,6 +1349,7 @@
     "label": "Aide au logement",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 0,
     "maxvalue": 1000000,
@@ -633,6 +1365,7 @@
     "label": "Prestations familiales",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 0,
     "maxvalue": 1000000,
@@ -648,6 +1381,7 @@
     "label": "Autres revenus",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 0,
     "maxvalue": 1000000,
@@ -663,6 +1397,7 @@
     "label": "Pension",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 0,
     "maxvalue": 1000000,
@@ -678,6 +1413,7 @@
     "label": "Indemnités Sécurité Sociale",
     "group": "III. Vos revenus",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 0,
     "maxvalue": 1000000,
@@ -715,6 +1451,7 @@
     "label": "Loyer",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -737,6 +1474,7 @@
     "label": "Prêt immobilier",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -759,6 +1497,7 @@
     "label": "Pension alimentaire versée",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 0,
     "maxvalue": 1000000,
@@ -815,7 +1554,37 @@
     "type": "select",
     "subtype": "select",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "values": [{ "id": 10, "label": "Auto-Moto" }, { "id": 14, "label": "Prêt personnel" }, { "id": 15, "label": "Crédit renouvelable" }, { "id": 16, "label": "Paiement en plusieurs fois" }, { "id": 17, "label": "Travaux" }, { "id": 18, "label": "Prêt employeur" }, { "id": 11, "label": "Autres" }],
+    "keyForValues": "budgetTypes",
+    "values": [
+      {
+        "id": 10,
+        "label": "Auto-Moto"
+      },
+      {
+        "id": 14,
+        "label": "Prêt personnel"
+      },
+      {
+        "id": 15,
+        "label": "Crédit renouvelable"
+      },
+      {
+        "id": 16,
+        "label": "Paiement en plusieurs fois"
+      },
+      {
+        "id": 17,
+        "label": "Travaux"
+      },
+      {
+        "id": 18,
+        "label": "Prêt employeur"
+      },
+      {
+        "id": 11,
+        "label": "Autres"
+      }
+    ],
     "hidden": true,
     "binds": [
       {
@@ -831,6 +1600,7 @@
     "label": "Mensualité du crédit n°1",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -854,8 +1624,38 @@
     "group": "IV. Vos charges",
     "type": "select",
     "subtype": "select",
+    "keyForValues": "budgetTypes",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "values": [{ "id": 10, "label": "Auto-Moto" }, { "id": 14, "label": "Prêt personnel" }, { "id": 15, "label": "Crédit renouvelable" }, { "id": 16, "label": "Paiement en plusieurs fois" }, { "id": 17, "label": "Travaux" }, { "id": 18, "label": "Prêt employeur" }, { "id": 11, "label": "Autres" }],
+    "values": [
+      {
+        "id": 10,
+        "label": "Auto-Moto"
+      },
+      {
+        "id": 14,
+        "label": "Prêt personnel"
+      },
+      {
+        "id": 15,
+        "label": "Crédit renouvelable"
+      },
+      {
+        "id": 16,
+        "label": "Paiement en plusieurs fois"
+      },
+      {
+        "id": 17,
+        "label": "Travaux"
+      },
+      {
+        "id": 18,
+        "label": "Prêt employeur"
+      },
+      {
+        "id": 11,
+        "label": "Autres"
+      }
+    ],
     "hidden": true,
     "binds": [
       {
@@ -871,6 +1671,7 @@
     "label": "Mensualité du crédit n°2",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -894,8 +1695,38 @@
     "group": "IV. Vos charges",
     "type": "select",
     "subtype": "select",
+    "keyForValues": "budgetTypes",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "values": [{ "id": 10, "label": "Auto-Moto" }, { "id": 14, "label": "Prêt personnel" }, { "id": 15, "label": "Crédit renouvelable" }, { "id": 16, "label": "Paiement en plusieurs fois" }, { "id": 17, "label": "Travaux" }, { "id": 18, "label": "Prêt employeur" }, { "id": 11, "label": "Autres" }],
+    "values": [
+      {
+        "id": 10,
+        "label": "Auto-Moto"
+      },
+      {
+        "id": 14,
+        "label": "Prêt personnel"
+      },
+      {
+        "id": 15,
+        "label": "Crédit renouvelable"
+      },
+      {
+        "id": 16,
+        "label": "Paiement en plusieurs fois"
+      },
+      {
+        "id": 17,
+        "label": "Travaux"
+      },
+      {
+        "id": 18,
+        "label": "Prêt employeur"
+      },
+      {
+        "id": 11,
+        "label": "Autres"
+      }
+    ],
     "hidden": true,
     "binds": [
       {
@@ -911,6 +1742,7 @@
     "label": "Mensualité du crédit n°3",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -934,8 +1766,38 @@
     "group": "IV. Vos charges",
     "type": "select",
     "subtype": "select",
+    "keyForValues": "budgetTypes",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "values": [{ "id": 10, "label": "Auto-Moto" }, { "id": 14, "label": "Prêt personnel" }, { "id": 15, "label": "Crédit renouvelable" }, { "id": 16, "label": "Paiement en plusieurs fois" }, { "id": 17, "label": "Travaux" }, { "id": 18, "label": "Prêt employeur" }, { "id": 11, "label": "Autres" }],
+    "values": [
+      {
+        "id": 10,
+        "label": "Auto-Moto"
+      },
+      {
+        "id": 14,
+        "label": "Prêt personnel"
+      },
+      {
+        "id": 15,
+        "label": "Crédit renouvelable"
+      },
+      {
+        "id": 16,
+        "label": "Paiement en plusieurs fois"
+      },
+      {
+        "id": 17,
+        "label": "Travaux"
+      },
+      {
+        "id": 18,
+        "label": "Prêt employeur"
+      },
+      {
+        "id": 11,
+        "label": "Autres"
+      }
+    ],
     "hidden": true,
     "binds": [
       {
@@ -951,6 +1813,7 @@
     "label": "Mensualité du crédit n°4",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -974,8 +1837,38 @@
     "group": "IV. Vos charges",
     "type": "select",
     "subtype": "select",
+    "keyForValues": "budgetTypes",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "values": [{ "id": 10, "label": "Auto-Moto" }, { "id": 14, "label": "Prêt personnel" }, { "id": 15, "label": "Crédit renouvelable" }, { "id": 16, "label": "Paiement en plusieurs fois" }, { "id": 17, "label": "Travaux" }, { "id": 18, "label": "Prêt employeur" }, { "id": 11, "label": "Autres" }],
+    "values": [
+      {
+        "id": 10,
+        "label": "Auto-Moto"
+      },
+      {
+        "id": 14,
+        "label": "Prêt personnel"
+      },
+      {
+        "id": 15,
+        "label": "Crédit renouvelable"
+      },
+      {
+        "id": 16,
+        "label": "Paiement en plusieurs fois"
+      },
+      {
+        "id": 17,
+        "label": "Travaux"
+      },
+      {
+        "id": 18,
+        "label": "Prêt employeur"
+      },
+      {
+        "id": 11,
+        "label": "Autres"
+      }
+    ],
     "hidden": true,
     "binds": [
       {
@@ -991,6 +1884,7 @@
     "label": "Mensualité du crédit n°5",
     "group": "IV. Vos charges",
     "type": "money",
+    "placeholder": "Montant mensuel (€)",
     "subtype": "input",
     "minvalue": 1,
     "maxvalue": 1000000,
@@ -1127,11 +2021,12 @@
     "group": "V. Votre banque",
     "value": "",
     "type": "year",
+    "placeholder": "AAAA",
     "subtype": "input",
     "minyear": 1945,
-    "maxyear": 2016,
+    "maxyear": "today",
     "minyearMessage": "La date doit etre postérieure à 1945",
-    "maxyearMessage": "La date doit etre antérieure à 2016",
+    "maxyearMessage": "La date doit etre antérieure à l'année en cours",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "patternMessage": "Merci de respecter le format : AAAA",
     "hidden": true,
@@ -1227,6 +2122,7 @@
     "group": "VI. Faisons connaissance",
     "value": "",
     "type": "date",
+    "placeholder": "JJ/MM/AAAA",
     "subtype": "input",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "autoChange": true,
@@ -1235,26 +2131,29 @@
   },
   {
     "name": "Etape1_Client_NaissanceCodePostal",
-    "label": "Code Postal de naissance",
+    "label": "Code postal de naissance",
     "group": "VI. Faisons connaissance",
     "value": "",
-    "type": "text",
-    "minlength": 5,
-    "maxlength": 5,
+    "type": "zipcode",
     "subtype": "input",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
-    "nextField": true
+    "broadCastValue": "Etape1_Client_NaissanceVille",
+    "nextField": true,
+    "autoChange": true,
+    "tooltip": "Code postal à 5 chiffres.<br /> Si étranger, saisir 99 000."
   },
   {
     "name": "Etape1_Client_NaissanceVille",
     "label": "Ville de naissance",
     "group": "VI. Faisons connaissance",
     "value": "",
-    "type": "text",
-    "minlength": 5,
-    "maxlength": 5,
-    "subtype": "input",
+    "type": "select",
+    "subtype": "select",
+    "values": [ ],
+    "keyForValues": "",
+    "keyForValuesRoot": "zipcode?zipCode=",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
+    "autoChange": true,
     "nextField": true
   },
   {
@@ -1329,6 +2228,7 @@
     "group": "VI. Faisons connaissance",
     "value": "",
     "type": "date",
+    "placeholder": "JJ/MM/AAAA",
     "subtype": "input",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "nextField": true,
@@ -1337,27 +2237,28 @@
   },
   {
     "name": "CEtape1_Client_NaissanceCodePostal",
-    "label": "Code Postal de naissance du conjoint",
+    "label": "Code postal de naissance du conjoint",
     "group": "VI. Faisons connaissance",
     "value": "",
-    "type": "text",
-    "minlength": 5,
-    "maxlength": 5,
+    "type": "zipcode",
+    "broadCastValue": "CEtape1_Client_NaissanceVille",
     "subtype": "input",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "nextField": true,
-    "coClient": true
+    "autoChange": true,
+    "coClient": true,
+    "tooltip": "Code postal à 5 chiffres.<br /> Si étranger, saisir 99 000."
   },
   {
-    "name": "CEtape1_Client_NaissanceCodePostal",
+    "name": "CEtape1_Client_NaissanceVille",
     "label": "Ville de naissance du conjoint",
     "group": "VI. Faisons connaissance",
-    "value": "",
-    "type": "text",
-    "minlength": 5,
-    "maxlength": 5,
-    "subtype": "input",
+    "type": "select",
+    "subtype": "select",
+    "values": [ ],
+    "keyForValuesRoot": "zipcode?zipCode=",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
+    "autoChange": true,
     "nextField": true,
     "coClient": true
   },
@@ -1389,10 +2290,12 @@
     "label": "Code postal de résidence",
     "group": "VI. Faisons connaissance",
     "value": "",
-    "type": "text",
+    "type": "zipcode",
+    "broadCastValue": "Etape1_Client_Adresse_Ville",
     "subtype": "input",
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "nextField": true,
+    "autoChange": true,
     "tooltip": "Code postal à 5 chiffres.<br /> Si étranger, saisir 99 000."
   },
   {
@@ -1400,8 +2303,36 @@
     "label": "Ville de résidence",
     "group": "VI. Faisons connaissance",
     "value": "",
+    "type": "select",
+    "subtype": "select",
+    "hidden": true,
+    "binds": [
+      {
+        "name": "Etape1_Client_Adresse_CodePostal",
+        "values": [ "*" ],
+        "hidden": 99000
+      }
+    ],
+    "values": [ ],
+    "keyForValuesRoot": "zipcode?zipCode=",
+    "requireMessage": "Champ obligatoire : merci de le renseigner.",
+    "autoChange": true,
+    "nextField": true
+  },
+  {
+    "name": "Etape1_Client_Adresse_Ville_Foreing",
+    "label": "Ville de résidence",
+    "group": "VI. Faisons connaissance",
+    "value": "",
     "type": "text",
     "subtype": "input",
+    "hidden": true,
+    "binds": [
+      {
+        "name": "Etape1_Client_Adresse_CodePostal",
+        "values": [ "99000" ]
+      }
+    ],
     "requireMessage": "Champ obligatoire : merci de le renseigner.",
     "nextField": true
   },
@@ -1436,5 +2367,30 @@
     "tooltip": "La saisie de votre numéro de téléphone fixe accelerera le traitement de votre demande. <br />Veuillez renseigner un numéro français commençant par 01, 02, 03, 04, 05, 08 ou par 09.<br />Si vous ne possédez pas de ligne fixe, cliquez sur le lien ci-dessous.",
     "skip": true,
     "skipMessage": "Pas de ligne fixe"
+  },
+  {
+    "name": "Assurance",
+    "label": "Assurance",
+    "group": "VI. Faisons connaissance",
+    "type": "insurance",
+    "subtype": "input",
+    "requireMessage": "Champ obligatoire : merci de le renseigner.",
+    "values": [
+      {
+        "id": 1,
+        "label": "Assurance de Base"
+      },
+      {
+        "id": 2,
+        "label": "Assurance de Base + Perte d'Emploi"
+      },
+      {
+        "id": 3,
+        "label": "Aucune"
+      }
+    ],
+    "nextField": true,
+    "autoChange": true,
+    "tooltip": "Merci de renseigner également les informations ci-dessous concernant votre conjoint."
   }
 ]

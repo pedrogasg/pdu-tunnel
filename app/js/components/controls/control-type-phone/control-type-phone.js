@@ -4,7 +4,7 @@
     function ControlTypePhone(elementBindService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/controls/control-type-phone/control-type-phone.html',
+            templateUrl: '/js/components/controls/control-type-phone/control-type-phone.html',
             scope: {
                 'tunnel': '=parentTunnel',
                 'field': '=field',

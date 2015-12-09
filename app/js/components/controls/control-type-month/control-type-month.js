@@ -4,7 +4,7 @@
     function ControlTypeMonth(elementBindService) {
         return {
             restrict: 'A',
-            templateUrl: '/app/js/components/controls/control-type-month/control-type-month.html',
+            templateUrl: '/js/components/controls/control-type-month/control-type-month.html',
             scope: {
                 'tunnel': '=parentTunnel',
                 'field': '=field',

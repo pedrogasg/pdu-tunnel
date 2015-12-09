@@ -1,36 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "angular-seed", "..\angular-seed", "{EF153C89-C710-4113-BCE3-E2C143B61B74}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "angular-seed(2)", ".", "{E6454DC0-DCF4-482E-854E-C4DDEB7E05EB}"
 	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = "SAK"
-		SccAuxPath = "SAK"
-		SccLocalPath = "SAK"
-		SccProvider = "SAK"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_54681"
-		Debug.AspNetCompiler.PhysicalPath = "..\angular-seed\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54681\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6558"
+		Debug.AspNetCompiler.PhysicalPath = "C:\dnx\angular-seed\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6558\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_54681"
-		Release.AspNetCompiler.PhysicalPath = "..\angular-seed\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54681\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6558"
+		Release.AspNetCompiler.PhysicalPath = "C:\dnx\angular-seed\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6558\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "54681"
-		SlnRelativePath = "..\angular-seed\"
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4FA8E51-F250-49D6-B00F-0E7D30D3AB46}"
-	ProjectSection(SolutionItems) = preProject
-		.tfsignore = .tfsignore
+		VWDPort = "6558"
 	EndProjectSection
 EndProject
 Global
@@ -38,20 +28,10 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF153C89-C710-4113-BCE3-E2C143B61B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF153C89-C710-4113-BCE3-E2C143B61B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6454DC0-DCF4-482E-854E-C4DDEB7E05EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6454DC0-DCF4-482E-854E-C4DDEB7E05EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs-2:8080/tfs/pdu
-		SccLocalPath0 = .
-		SccWebProject1 = true
-		SccProjectUniqueName1 = .
-		SccLocalPath1 = .
-		SccProjectEnlistmentChoice1 = 2
 	EndGlobalSection
 EndGlobal

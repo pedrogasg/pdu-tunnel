@@ -12,7 +12,11 @@
                         return maxVal === 'undefined' || isNaN(maxVal) || validateMaxDate(value, maxVal);
                     };
                     attr.$observe('maxyear', function (val) {
-                        maxVal = parseInt(val);
+                        if (val == 'today') {
+                            maxVal = new Date().getFullYear()+1;
+                        } else {
+                            maxVal = parseInt(val);
+                        }
                         ctrl.$validate();
                     });
                 }

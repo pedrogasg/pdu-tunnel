@@ -3,7 +3,7 @@
         <label class="name-label" for="{{key}}">{{field.label}}</label>
     </div>
     <div class="input">
-        <input type="text" input-type-money ng-model="field.value" name="{{key}}" ng-required="field.isRequire(tunnel)" minvalue="{{field.minvalue}}" maxvalue="{{field.maxvalue}}" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" />
+        <input type="text" placeholder="{{field.placeholder}}" input-type-money ng-model="field.value" name="{{key}}" ng-required="field.isRequire(tunnel)" minvalue="{{field.minvalue}}" maxvalue="{{field.maxvalue}}" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" />
         <div class="messages" ng-if="currentField[key].$touched" ng-messages="currentField[key].$error" role="alert">
             <div ng-message="required">{{field.requireMessage}}</div>
             <div ng-message="parse">{{field.parseMessage}}</div>

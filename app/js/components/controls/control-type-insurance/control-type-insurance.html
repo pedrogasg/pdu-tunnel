@@ -1,0 +1,18 @@
+﻿<div class="control" ng-form ng-if="field.isVisible(tunnel)" name="currentField" ng-class="{'focused':focus, 'current':tunnel.isCurrentField(field)}">
+    <div class="label">
+        <p class="name-label" for="{{key}}">{{field.label}}</p>
+    </div>
+    <div class="input">
+        <label ng-repeat="obj in field.values" class="input-label" for="item-{{obj.id}}" ng-class="{'selected':field.value == obj.id}">
+            {{ obj.label }}
+            <input id="item-{{obj.id}}" name="{{key}}" type="radio" ng-model="field.value" ng-required="field.isRequire(tunnel)" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" ng-value="{{obj.id}}" />
+            <span class="cicle"></span>
+        </label>
+    </div>
+    <div class="tooltip">
+        <div>
+            <p ng-bind-html="field.tooltip"></p>
+            <a ng-if="field.skip" class="skipper" ng-click="tunnel.nextInput()">{{ field.skipMessage }}</a>
+        </div>
+    </div>
+</div>

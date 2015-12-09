@@ -3,7 +3,7 @@
         <label class="name-label" for="{{key}}">{{field.label}}</label>
     </div>
     <div class="input">
-        <input type="date" ng-model="field.value" name="{{key}}" max="2015-11-13" min="1945-01-01" ng-required="field.isRequire(tunnel)" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" />
+        <input placeholder="{{field.placeholder}}" input-type-date type="text" ng-model="field.value" name="{{key}}" max="2015-11-13" min="1945-01-01" ng-required="field.isRequire(tunnel)" ng-trim="true" next-field="{{field.nextField}}" auto-change="{{field.autoChange}}" ng-focus="focus = true; tunnel.setCurrentField(field)" ng-blur="focus = false" minlength="10" maxlength="10" />
         <div class="messages" ng-if="currentField[key].$touched" ng-messages="currentField[key].$error" role="alert">
             <div ng-message="required">{{field.requireMessage}}</div>
         </div>
